@@ -110,9 +110,14 @@ class AccountsController extends AppController {
         $this->set('sport', $sport_tab);
         $this->set('rank', $this->Member->findforHall($this->Log->classement($sport_tab)));       
     }
-
-    public function myworkouts() {
-        
+    
+    public function detail($idwo){
+        $this->loadModel('Workout');
+        if($this->request->is('post')){
+            $d = $this->request->data;
+            $this->Workout->editWo($d['id'], $d['date'], $d('end-date'), $d['sport']);
+        }
+        $this->set("current", $this->Workout->set($idwo));
     }
 
     public function myresults() {
@@ -122,17 +127,33 @@ class AccountsController extends AppController {
     public function mydevices() {
         
     }
-
-    public function adddevices() {
-        
+    
+    public function myworkouts() {
+     
+    }
+    
+    public function addworkout() {
+        $this-> loadModel("Workout");
+        if($this->request->is('post')){
+            $d = $this->request->data;
+            $this->Workout->addWorkout($d['date'], $d['end-date'], $d['sport']);
+        }
     }
 
-    public function addworkout() {
-        
+    public function adddevices() {
+        $this-> loadModel("Device");
+        if($this->request->is('post')){
+            $d = $this->request->data;
+            $this->Device->addDevice($d['serial'], $d['description']);
+        }
     }
 
     public function addresult() {
-        
+        $this-> loadModel("Log");
+        if($this->request->is('post')){
+            $d = $this->request->data;
+            $this->Device->addResult($d['member_id'], $d['workout_id'], $d['device_id'], $d['date'], $d['location_latitude'], $d['location_logitude'], $d['log_type'], $d['log_value'] );
+        }
     }
 
     public function mybadges() {   
