@@ -20,6 +20,8 @@ class LogTable extends Table {
         $n -> log_value = $log_value;
         $this->save($n);
     }
+    
+    
 }
 
 

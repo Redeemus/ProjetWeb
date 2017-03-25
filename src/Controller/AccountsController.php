@@ -106,9 +106,9 @@ class AccountsController extends AppController {
 
     public function halloffame() {
         $this->loadModel('Logs');
-        $sport_tab = $this->find('all')->where(['Logs.log_type']);
-        $this->set('sport', $sport_tab);
-        $this->set('rank', $this->Member->findforHall($this->Log->classement($sport_tab)));       
+        $sport_tab = $this->Logs->find('all')->where(['Logs.log_type']);
+        $ntab = $this->set('sport', $sport_tab);
+        $this->set('rank', $this->Member->findforHall($this->Log->classement($ntab)));       
     }
     
     public function detail($idwo){
@@ -133,10 +133,13 @@ class AccountsController extends AppController {
     }
     
     public function addworkout() {
+        $session = $this->request->session();
+        $member_id = $session->read('Members.id');
         $this-> loadModel("Workout");
         if($this->request->is('post')){
             $d = $this->request->data;
-            $this->Workout->addWorkout($d['date'], $d['end-date'], $d['sport']);
+            pr($d);
+            $this->workouts->addworkout($member_id, $d['date'], $d['end_date'],$d['location_name'],$d['description'], $d['sport']);
         }
     }
 

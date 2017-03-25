@@ -8,6 +8,7 @@ use Cake\ORM\TableRegistry;
 
 
 class Member extends Table {
-
+    
+    
     
 }

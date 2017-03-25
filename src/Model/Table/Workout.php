@@ -8,11 +8,14 @@ use Cake\ORM\TableRegistry;
 
 class WorkoutTable extends Table {
     
-    public function addWorkout($d, $ed, $s) {
+    public function addworkout($id, $d, $ed, $l,$des, $s) {
         $n = $this->newEntity();
+        $n -> id = $id;
         $n -> date = $d;
         $n -> end_date= $ed;
-        $n -> sport = $ $s;
+        $n -> location_name = $l;
+        $n -> description = $des;
+        $n -> sport = $s;
         $this->save($n);
     }
     
