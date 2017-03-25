@@ -31272,3 +31272,1304 @@ Stack Trace:
 #2 {main}
 
 
+2017-03-25 14:16:25 Error: [PDOException] SQLSTATE[HY000]: General error: 11 database disk image is malformed
+Request URL: /accounts
+Stack Trace:
+#0 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php(174): PDOStatement->execute(NULL)
+#1 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php(174): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#2 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Database\Statement\BufferedStatement.php(76): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#3 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Database\Statement\SqliteStatement.php(41): Cake\Database\Statement\BufferedStatement->execute(NULL)
+#4 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Database\Connection.php(313): Cake\Database\Statement\SqliteStatement->execute()
+#5 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Database\Query.php(213): Cake\Database\Connection->run(Object(Cake\ORM\Query))
+#6 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\ORM\Table.php(1916): Cake\Database\Query->execute()
+#7 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\ORM\Table.php(1810): Cake\ORM\Table->_insert(Object(DebugKit\Model\Entity\Request), Array)
+#8 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\ORM\Table.php(1723): Cake\ORM\Table->_processSave(Object(DebugKit\Model\Entity\Request), Object(ArrayObject))
+#9 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\ORM\Table.php(1446): Cake\ORM\Table->Cake\ORM\{closure}()
+#10 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Database\Connection.php(680): Cake\ORM\Table->Cake\ORM\{closure}(Object(Cake\Database\Connection))
+#11 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\ORM\Table.php(1447): Cake\Database\Connection->transactional(Object(Closure))
+#12 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\ORM\Table.php(1724): Cake\ORM\Table->_executeTransaction(Object(Closure), true)
+#13 C:\wamp64\www\ProjetWeb\vendor\cakephp\debug_kit\src\ToolbarService.php(200): Cake\ORM\Table->save(Object(DebugKit\Model\Entity\Request))
+#14 C:\wamp64\www\ProjetWeb\vendor\cakephp\debug_kit\src\Routing\Filter\DebugBarFilter.php(139): DebugKit\ToolbarService->saveData(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#15 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Event\EventManager.php(414): DebugKit\Routing\Filter\DebugBarFilter->afterDispatch(Object(Cake\Event\Event), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#16 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Event\EventManager.php(391): Cake\Event\EventManager->_callListener(Array, Object(Cake\Event\Event))
+#17 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Event\EventDispatcherTrait.php(78): Cake\Event\EventManager->dispatch(Object(Cake\Event\Event))
+#18 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(98): Cake\Http\ActionDispatcher->dispatchEvent('Dispatcher.afte...', Array)
+#19 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\BaseApplication.php(78): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#20 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#21 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(59): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#22 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#23 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#24 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#25 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(92): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#26 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#27 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#28 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Server.php(80): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#29 C:\wamp64\www\ProjetWeb\webroot\index.php(37): Cake\Http\Server->run()
+#30 {main}
+
+
+2017-03-25 14:16:31 Error: [PDOException] SQLSTATE[HY000]: General error: 11 database disk image is malformed
+Request URL: /
+Stack Trace:
+#0 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php(174): PDOStatement->execute(NULL)
+#1 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php(174): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#2 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Database\Statement\BufferedStatement.php(76): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#3 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Database\Statement\SqliteStatement.php(41): Cake\Database\Statement\BufferedStatement->execute(NULL)
+#4 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Database\Connection.php(313): Cake\Database\Statement\SqliteStatement->execute()
+#5 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Database\Query.php(213): Cake\Database\Connection->run(Object(Cake\ORM\Query))
+#6 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\ORM\Table.php(1916): Cake\Database\Query->execute()
+#7 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\ORM\Table.php(1810): Cake\ORM\Table->_insert(Object(DebugKit\Model\Entity\Request), Array)
+#8 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\ORM\Table.php(1723): Cake\ORM\Table->_processSave(Object(DebugKit\Model\Entity\Request), Object(ArrayObject))
+#9 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\ORM\Table.php(1446): Cake\ORM\Table->Cake\ORM\{closure}()
+#10 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Database\Connection.php(680): Cake\ORM\Table->Cake\ORM\{closure}(Object(Cake\Database\Connection))
+#11 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\ORM\Table.php(1447): Cake\Database\Connection->transactional(Object(Closure))
+#12 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\ORM\Table.php(1724): Cake\ORM\Table->_executeTransaction(Object(Closure), true)
+#13 C:\wamp64\www\ProjetWeb\vendor\cakephp\debug_kit\src\ToolbarService.php(200): Cake\ORM\Table->save(Object(DebugKit\Model\Entity\Request))
+#14 C:\wamp64\www\ProjetWeb\vendor\cakephp\debug_kit\src\Routing\Filter\DebugBarFilter.php(139): DebugKit\ToolbarService->saveData(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#15 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Event\EventManager.php(414): DebugKit\Routing\Filter\DebugBarFilter->afterDispatch(Object(Cake\Event\Event), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#16 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Event\EventManager.php(391): Cake\Event\EventManager->_callListener(Array, Object(Cake\Event\Event))
+#17 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Event\EventDispatcherTrait.php(78): Cake\Event\EventManager->dispatch(Object(Cake\Event\Event))
+#18 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(98): Cake\Http\ActionDispatcher->dispatchEvent('Dispatcher.afte...', Array)
+#19 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\BaseApplication.php(78): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#20 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#21 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(59): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#22 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#23 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#24 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#25 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(92): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#26 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#27 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#28 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Server.php(80): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#29 C:\wamp64\www\ProjetWeb\webroot\index.php(37): Cake\Http\Server->run()
+#30 {main}
+
+
+2017-03-25 14:16:41 Error: [PDOException] SQLSTATE[HY000]: General error: 11 database disk image is malformed
+Request URL: /
+Referer URL: http://localhost/
+Stack Trace:
+#0 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php(174): PDOStatement->execute(NULL)
+#1 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php(174): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#2 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Database\Statement\BufferedStatement.php(76): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#3 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Database\Statement\SqliteStatement.php(41): Cake\Database\Statement\BufferedStatement->execute(NULL)
+#4 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Database\Connection.php(313): Cake\Database\Statement\SqliteStatement->execute()
+#5 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Database\Query.php(213): Cake\Database\Connection->run(Object(Cake\ORM\Query))
+#6 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\ORM\Table.php(1916): Cake\Database\Query->execute()
+#7 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\ORM\Table.php(1810): Cake\ORM\Table->_insert(Object(DebugKit\Model\Entity\Request), Array)
+#8 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\ORM\Table.php(1723): Cake\ORM\Table->_processSave(Object(DebugKit\Model\Entity\Request), Object(ArrayObject))
+#9 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\ORM\Table.php(1446): Cake\ORM\Table->Cake\ORM\{closure}()
+#10 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Database\Connection.php(680): Cake\ORM\Table->Cake\ORM\{closure}(Object(Cake\Database\Connection))
+#11 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\ORM\Table.php(1447): Cake\Database\Connection->transactional(Object(Closure))
+#12 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\ORM\Table.php(1724): Cake\ORM\Table->_executeTransaction(Object(Closure), true)
+#13 C:\wamp64\www\ProjetWeb\vendor\cakephp\debug_kit\src\ToolbarService.php(200): Cake\ORM\Table->save(Object(DebugKit\Model\Entity\Request))
+#14 C:\wamp64\www\ProjetWeb\vendor\cakephp\debug_kit\src\Routing\Filter\DebugBarFilter.php(139): DebugKit\ToolbarService->saveData(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#15 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Event\EventManager.php(414): DebugKit\Routing\Filter\DebugBarFilter->afterDispatch(Object(Cake\Event\Event), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#16 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Event\EventManager.php(391): Cake\Event\EventManager->_callListener(Array, Object(Cake\Event\Event))
+#17 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Event\EventDispatcherTrait.php(78): Cake\Event\EventManager->dispatch(Object(Cake\Event\Event))
+#18 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(98): Cake\Http\ActionDispatcher->dispatchEvent('Dispatcher.afte...', Array)
+#19 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\BaseApplication.php(78): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#20 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#21 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(59): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#22 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#23 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#24 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#25 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(92): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#26 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#27 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#28 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Server.php(80): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#29 C:\wamp64\www\ProjetWeb\webroot\index.php(37): Cake\Http\Server->run()
+#30 {main}
+
+
+2017-03-25 14:17:28 Error: [PDOException] SQLSTATE[HY000]: General error: 11 database disk image is malformed
+Request URL: /
+Referer URL: http://localhost/
+Stack Trace:
+#0 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php(174): PDOStatement->execute(NULL)
+#1 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php(174): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#2 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Database\Statement\BufferedStatement.php(76): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#3 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Database\Statement\SqliteStatement.php(41): Cake\Database\Statement\BufferedStatement->execute(NULL)
+#4 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Database\Connection.php(313): Cake\Database\Statement\SqliteStatement->execute()
+#5 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Database\Query.php(213): Cake\Database\Connection->run(Object(Cake\ORM\Query))
+#6 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\ORM\Table.php(1916): Cake\Database\Query->execute()
+#7 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\ORM\Table.php(1810): Cake\ORM\Table->_insert(Object(DebugKit\Model\Entity\Request), Array)
+#8 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\ORM\Table.php(1723): Cake\ORM\Table->_processSave(Object(DebugKit\Model\Entity\Request), Object(ArrayObject))
+#9 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\ORM\Table.php(1446): Cake\ORM\Table->Cake\ORM\{closure}()
+#10 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Database\Connection.php(680): Cake\ORM\Table->Cake\ORM\{closure}(Object(Cake\Database\Connection))
+#11 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\ORM\Table.php(1447): Cake\Database\Connection->transactional(Object(Closure))
+#12 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\ORM\Table.php(1724): Cake\ORM\Table->_executeTransaction(Object(Closure), true)
+#13 C:\wamp64\www\ProjetWeb\vendor\cakephp\debug_kit\src\ToolbarService.php(200): Cake\ORM\Table->save(Object(DebugKit\Model\Entity\Request))
+#14 C:\wamp64\www\ProjetWeb\vendor\cakephp\debug_kit\src\Routing\Filter\DebugBarFilter.php(139): DebugKit\ToolbarService->saveData(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#15 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Event\EventManager.php(414): DebugKit\Routing\Filter\DebugBarFilter->afterDispatch(Object(Cake\Event\Event), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#16 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Event\EventManager.php(391): Cake\Event\EventManager->_callListener(Array, Object(Cake\Event\Event))
+#17 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Event\EventDispatcherTrait.php(78): Cake\Event\EventManager->dispatch(Object(Cake\Event\Event))
+#18 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(98): Cake\Http\ActionDispatcher->dispatchEvent('Dispatcher.afte...', Array)
+#19 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\BaseApplication.php(78): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#20 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#21 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(59): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#22 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#23 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#24 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#25 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(92): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#26 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#27 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#28 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Server.php(80): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#29 C:\wamp64\www\ProjetWeb\webroot\index.php(37): Cake\Http\Server->run()
+#30 {main}
+
+
+2017-03-25 14:17:31 Error: [PDOException] SQLSTATE[HY000]: General error: 11 database disk image is malformed
+Request URL: /
+Referer URL: http://localhost/
+Stack Trace:
+#0 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php(174): PDOStatement->execute(NULL)
+#1 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php(174): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#2 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Database\Statement\BufferedStatement.php(76): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#3 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Database\Statement\SqliteStatement.php(41): Cake\Database\Statement\BufferedStatement->execute(NULL)
+#4 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Database\Connection.php(313): Cake\Database\Statement\SqliteStatement->execute()
+#5 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Database\Query.php(213): Cake\Database\Connection->run(Object(Cake\ORM\Query))
+#6 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\ORM\Table.php(1916): Cake\Database\Query->execute()
+#7 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\ORM\Table.php(1810): Cake\ORM\Table->_insert(Object(DebugKit\Model\Entity\Request), Array)
+#8 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\ORM\Table.php(1723): Cake\ORM\Table->_processSave(Object(DebugKit\Model\Entity\Request), Object(ArrayObject))
+#9 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\ORM\Table.php(1446): Cake\ORM\Table->Cake\ORM\{closure}()
+#10 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Database\Connection.php(680): Cake\ORM\Table->Cake\ORM\{closure}(Object(Cake\Database\Connection))
+#11 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\ORM\Table.php(1447): Cake\Database\Connection->transactional(Object(Closure))
+#12 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\ORM\Table.php(1724): Cake\ORM\Table->_executeTransaction(Object(Closure), true)
+#13 C:\wamp64\www\ProjetWeb\vendor\cakephp\debug_kit\src\ToolbarService.php(200): Cake\ORM\Table->save(Object(DebugKit\Model\Entity\Request))
+#14 C:\wamp64\www\ProjetWeb\vendor\cakephp\debug_kit\src\Routing\Filter\DebugBarFilter.php(139): DebugKit\ToolbarService->saveData(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#15 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Event\EventManager.php(414): DebugKit\Routing\Filter\DebugBarFilter->afterDispatch(Object(Cake\Event\Event), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#16 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Event\EventManager.php(391): Cake\Event\EventManager->_callListener(Array, Object(Cake\Event\Event))
+#17 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Event\EventDispatcherTrait.php(78): Cake\Event\EventManager->dispatch(Object(Cake\Event\Event))
+#18 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(98): Cake\Http\ActionDispatcher->dispatchEvent('Dispatcher.afte...', Array)
+#19 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\BaseApplication.php(78): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#20 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#21 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(59): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#22 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#23 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#24 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#25 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(92): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#26 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#27 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#28 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Server.php(80): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#29 C:\wamp64\www\ProjetWeb\webroot\index.php(37): Cake\Http\Server->run()
+#30 {main}
+
+
+2017-03-25 14:18:09 Error: [PDOException] SQLSTATE[HY000]: General error: 11 database disk image is malformed
+Request URL: /accounts/addworkout
+Stack Trace:
+#0 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php(174): PDOStatement->execute(NULL)
+#1 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php(174): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#2 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Database\Statement\BufferedStatement.php(76): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#3 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Database\Statement\SqliteStatement.php(41): Cake\Database\Statement\BufferedStatement->execute(NULL)
+#4 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Database\Connection.php(313): Cake\Database\Statement\SqliteStatement->execute()
+#5 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Database\Query.php(213): Cake\Database\Connection->run(Object(Cake\ORM\Query))
+#6 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\ORM\Table.php(1916): Cake\Database\Query->execute()
+#7 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\ORM\Table.php(1810): Cake\ORM\Table->_insert(Object(DebugKit\Model\Entity\Request), Array)
+#8 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\ORM\Table.php(1723): Cake\ORM\Table->_processSave(Object(DebugKit\Model\Entity\Request), Object(ArrayObject))
+#9 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\ORM\Table.php(1446): Cake\ORM\Table->Cake\ORM\{closure}()
+#10 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Database\Connection.php(680): Cake\ORM\Table->Cake\ORM\{closure}(Object(Cake\Database\Connection))
+#11 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\ORM\Table.php(1447): Cake\Database\Connection->transactional(Object(Closure))
+#12 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\ORM\Table.php(1724): Cake\ORM\Table->_executeTransaction(Object(Closure), true)
+#13 C:\wamp64\www\ProjetWeb\vendor\cakephp\debug_kit\src\ToolbarService.php(200): Cake\ORM\Table->save(Object(DebugKit\Model\Entity\Request))
+#14 C:\wamp64\www\ProjetWeb\vendor\cakephp\debug_kit\src\Routing\Filter\DebugBarFilter.php(139): DebugKit\ToolbarService->saveData(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#15 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Event\EventManager.php(414): DebugKit\Routing\Filter\DebugBarFilter->afterDispatch(Object(Cake\Event\Event), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#16 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Event\EventManager.php(391): Cake\Event\EventManager->_callListener(Array, Object(Cake\Event\Event))
+#17 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Event\EventDispatcherTrait.php(78): Cake\Event\EventManager->dispatch(Object(Cake\Event\Event))
+#18 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(98): Cake\Http\ActionDispatcher->dispatchEvent('Dispatcher.afte...', Array)
+#19 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\BaseApplication.php(78): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#20 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#21 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(59): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#22 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#23 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#24 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#25 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(92): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#26 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#27 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#28 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Server.php(80): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#29 C:\wamp64\www\ProjetWeb\webroot\index.php(37): Cake\Http\Server->run()
+#30 {main}
+
+
+2017-03-25 14:18:56 Error: [PDOException] SQLSTATE[HY000]: General error: 11 database disk image is malformed
+Request URL: /accounts/
+Stack Trace:
+#0 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php(174): PDOStatement->execute(NULL)
+#1 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php(174): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#2 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Database\Statement\BufferedStatement.php(76): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#3 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Database\Statement\SqliteStatement.php(41): Cake\Database\Statement\BufferedStatement->execute(NULL)
+#4 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Database\Connection.php(313): Cake\Database\Statement\SqliteStatement->execute()
+#5 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Database\Query.php(213): Cake\Database\Connection->run(Object(Cake\ORM\Query))
+#6 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\ORM\Table.php(1916): Cake\Database\Query->execute()
+#7 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\ORM\Table.php(1810): Cake\ORM\Table->_insert(Object(DebugKit\Model\Entity\Request), Array)
+#8 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\ORM\Table.php(1723): Cake\ORM\Table->_processSave(Object(DebugKit\Model\Entity\Request), Object(ArrayObject))
+#9 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\ORM\Table.php(1446): Cake\ORM\Table->Cake\ORM\{closure}()
+#10 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Database\Connection.php(680): Cake\ORM\Table->Cake\ORM\{closure}(Object(Cake\Database\Connection))
+#11 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\ORM\Table.php(1447): Cake\Database\Connection->transactional(Object(Closure))
+#12 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\ORM\Table.php(1724): Cake\ORM\Table->_executeTransaction(Object(Closure), true)
+#13 C:\wamp64\www\ProjetWeb\vendor\cakephp\debug_kit\src\ToolbarService.php(200): Cake\ORM\Table->save(Object(DebugKit\Model\Entity\Request))
+#14 C:\wamp64\www\ProjetWeb\vendor\cakephp\debug_kit\src\Routing\Filter\DebugBarFilter.php(139): DebugKit\ToolbarService->saveData(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#15 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Event\EventManager.php(414): DebugKit\Routing\Filter\DebugBarFilter->afterDispatch(Object(Cake\Event\Event), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#16 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Event\EventManager.php(391): Cake\Event\EventManager->_callListener(Array, Object(Cake\Event\Event))
+#17 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Event\EventDispatcherTrait.php(78): Cake\Event\EventManager->dispatch(Object(Cake\Event\Event))
+#18 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(98): Cake\Http\ActionDispatcher->dispatchEvent('Dispatcher.afte...', Array)
+#19 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\BaseApplication.php(78): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#20 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#21 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(59): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#22 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#23 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#24 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#25 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(92): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#26 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#27 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#28 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Server.php(80): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#29 C:\wamp64\www\ProjetWeb\webroot\index.php(37): Cake\Http\Server->run()
+#30 {main}
+
+
+2017-03-25 14:20:49 Error: [PDOException] SQLSTATE[HY000]: General error: 11 database disk image is malformed
+Request URL: /accounts/
+Stack Trace:
+#0 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php(174): PDOStatement->execute(NULL)
+#1 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php(174): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#2 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Database\Statement\BufferedStatement.php(76): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#3 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Database\Statement\SqliteStatement.php(41): Cake\Database\Statement\BufferedStatement->execute(NULL)
+#4 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Database\Connection.php(313): Cake\Database\Statement\SqliteStatement->execute()
+#5 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Database\Query.php(213): Cake\Database\Connection->run(Object(Cake\ORM\Query))
+#6 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\ORM\Table.php(1916): Cake\Database\Query->execute()
+#7 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\ORM\Table.php(1810): Cake\ORM\Table->_insert(Object(DebugKit\Model\Entity\Request), Array)
+#8 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\ORM\Table.php(1723): Cake\ORM\Table->_processSave(Object(DebugKit\Model\Entity\Request), Object(ArrayObject))
+#9 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\ORM\Table.php(1446): Cake\ORM\Table->Cake\ORM\{closure}()
+#10 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Database\Connection.php(680): Cake\ORM\Table->Cake\ORM\{closure}(Object(Cake\Database\Connection))
+#11 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\ORM\Table.php(1447): Cake\Database\Connection->transactional(Object(Closure))
+#12 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\ORM\Table.php(1724): Cake\ORM\Table->_executeTransaction(Object(Closure), true)
+#13 C:\wamp64\www\ProjetWeb\vendor\cakephp\debug_kit\src\ToolbarService.php(200): Cake\ORM\Table->save(Object(DebugKit\Model\Entity\Request))
+#14 C:\wamp64\www\ProjetWeb\vendor\cakephp\debug_kit\src\Routing\Filter\DebugBarFilter.php(139): DebugKit\ToolbarService->saveData(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#15 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Event\EventManager.php(414): DebugKit\Routing\Filter\DebugBarFilter->afterDispatch(Object(Cake\Event\Event), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#16 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Event\EventManager.php(391): Cake\Event\EventManager->_callListener(Array, Object(Cake\Event\Event))
+#17 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Event\EventDispatcherTrait.php(78): Cake\Event\EventManager->dispatch(Object(Cake\Event\Event))
+#18 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(98): Cake\Http\ActionDispatcher->dispatchEvent('Dispatcher.afte...', Array)
+#19 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\BaseApplication.php(78): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#20 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#21 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(59): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#22 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#23 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#24 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#25 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(92): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#26 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#27 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#28 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Server.php(80): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#29 C:\wamp64\www\ProjetWeb\webroot\index.php(37): Cake\Http\Server->run()
+#30 {main}
+
+
+2017-03-25 14:20:55 Error: [PDOException] SQLSTATE[HY000]: General error: 11 database disk image is malformed
+Request URL: /accounts
+Stack Trace:
+#0 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php(174): PDOStatement->execute(NULL)
+#1 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php(174): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#2 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Database\Statement\BufferedStatement.php(76): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#3 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Database\Statement\SqliteStatement.php(41): Cake\Database\Statement\BufferedStatement->execute(NULL)
+#4 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Database\Connection.php(313): Cake\Database\Statement\SqliteStatement->execute()
+#5 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Database\Query.php(213): Cake\Database\Connection->run(Object(Cake\ORM\Query))
+#6 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\ORM\Table.php(1916): Cake\Database\Query->execute()
+#7 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\ORM\Table.php(1810): Cake\ORM\Table->_insert(Object(DebugKit\Model\Entity\Request), Array)
+#8 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\ORM\Table.php(1723): Cake\ORM\Table->_processSave(Object(DebugKit\Model\Entity\Request), Object(ArrayObject))
+#9 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\ORM\Table.php(1446): Cake\ORM\Table->Cake\ORM\{closure}()
+#10 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Database\Connection.php(680): Cake\ORM\Table->Cake\ORM\{closure}(Object(Cake\Database\Connection))
+#11 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\ORM\Table.php(1447): Cake\Database\Connection->transactional(Object(Closure))
+#12 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\ORM\Table.php(1724): Cake\ORM\Table->_executeTransaction(Object(Closure), true)
+#13 C:\wamp64\www\ProjetWeb\vendor\cakephp\debug_kit\src\ToolbarService.php(200): Cake\ORM\Table->save(Object(DebugKit\Model\Entity\Request))
+#14 C:\wamp64\www\ProjetWeb\vendor\cakephp\debug_kit\src\Routing\Filter\DebugBarFilter.php(139): DebugKit\ToolbarService->saveData(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#15 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Event\EventManager.php(414): DebugKit\Routing\Filter\DebugBarFilter->afterDispatch(Object(Cake\Event\Event), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#16 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Event\EventManager.php(391): Cake\Event\EventManager->_callListener(Array, Object(Cake\Event\Event))
+#17 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Event\EventDispatcherTrait.php(78): Cake\Event\EventManager->dispatch(Object(Cake\Event\Event))
+#18 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(98): Cake\Http\ActionDispatcher->dispatchEvent('Dispatcher.afte...', Array)
+#19 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\BaseApplication.php(78): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#20 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#21 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(59): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#22 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#23 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#24 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#25 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(92): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#26 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#27 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#28 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Server.php(80): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#29 C:\wamp64\www\ProjetWeb\webroot\index.php(37): Cake\Http\Server->run()
+#30 {main}
+
+
+2017-03-25 14:25:04 Error: [PDOException] SQLSTATE[HY000]: General error: 11 database disk image is malformed
+Request URL: /accounts
+Stack Trace:
+#0 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php(174): PDOStatement->execute(NULL)
+#1 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php(174): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#2 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Database\Statement\BufferedStatement.php(76): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#3 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Database\Statement\SqliteStatement.php(41): Cake\Database\Statement\BufferedStatement->execute(NULL)
+#4 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Database\Connection.php(313): Cake\Database\Statement\SqliteStatement->execute()
+#5 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Database\Query.php(213): Cake\Database\Connection->run(Object(Cake\ORM\Query))
+#6 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\ORM\Table.php(1916): Cake\Database\Query->execute()
+#7 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\ORM\Table.php(1810): Cake\ORM\Table->_insert(Object(DebugKit\Model\Entity\Request), Array)
+#8 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\ORM\Table.php(1723): Cake\ORM\Table->_processSave(Object(DebugKit\Model\Entity\Request), Object(ArrayObject))
+#9 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\ORM\Table.php(1446): Cake\ORM\Table->Cake\ORM\{closure}()
+#10 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Database\Connection.php(680): Cake\ORM\Table->Cake\ORM\{closure}(Object(Cake\Database\Connection))
+#11 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\ORM\Table.php(1447): Cake\Database\Connection->transactional(Object(Closure))
+#12 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\ORM\Table.php(1724): Cake\ORM\Table->_executeTransaction(Object(Closure), true)
+#13 C:\wamp64\www\ProjetWeb\vendor\cakephp\debug_kit\src\ToolbarService.php(200): Cake\ORM\Table->save(Object(DebugKit\Model\Entity\Request))
+#14 C:\wamp64\www\ProjetWeb\vendor\cakephp\debug_kit\src\Routing\Filter\DebugBarFilter.php(139): DebugKit\ToolbarService->saveData(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#15 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Event\EventManager.php(414): DebugKit\Routing\Filter\DebugBarFilter->afterDispatch(Object(Cake\Event\Event), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#16 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Event\EventManager.php(391): Cake\Event\EventManager->_callListener(Array, Object(Cake\Event\Event))
+#17 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Event\EventDispatcherTrait.php(78): Cake\Event\EventManager->dispatch(Object(Cake\Event\Event))
+#18 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(98): Cake\Http\ActionDispatcher->dispatchEvent('Dispatcher.afte...', Array)
+#19 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\BaseApplication.php(78): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#20 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#21 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(59): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#22 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#23 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#24 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#25 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(92): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#26 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#27 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#28 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Server.php(80): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#29 C:\wamp64\www\ProjetWeb\webroot\index.php(37): Cake\Http\Server->run()
+#30 {main}
+
+
+2017-03-25 14:29:29 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Fonts could not be found.
+Exception Attributes: array (
+  'class' => 'Fonts',
+  'plugin' => false,
+  'prefix' => false,
+  '_ext' => false,
+)
+Request URL: /fonts/glyphicons-halflings-regular.woff2
+Referer URL: http://localhost/ProjetWeb/css/bootstrap.css
+Stack Trace:
+#0 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\ControllerFactory.php(70): Cake\Http\ControllerFactory->missingController(Object(Cake\Http\ServerRequest))
+#1 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(90): Cake\Http\ControllerFactory->create(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#2 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\BaseApplication.php(78): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#3 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#4 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(59): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#5 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#6 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(93): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#7 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#8 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(92): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#9 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#10 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#11 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Server.php(80): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#12 C:\wamp64\www\ProjetWeb\webroot\index.php(37): Cake\Http\Server->run()
+#13 {main}
+
+
+2017-03-25 14:29:30 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Fonts could not be found.
+Exception Attributes: array (
+  'class' => 'Fonts',
+  'plugin' => false,
+  'prefix' => false,
+  '_ext' => false,
+)
+Request URL: /fonts/glyphicons-halflings-regular.woff
+Referer URL: http://localhost/ProjetWeb/css/bootstrap.css
+Stack Trace:
+#0 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\ControllerFactory.php(70): Cake\Http\ControllerFactory->missingController(Object(Cake\Http\ServerRequest))
+#1 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(90): Cake\Http\ControllerFactory->create(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#2 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\BaseApplication.php(78): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#3 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#4 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(59): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#5 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#6 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(93): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#7 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#8 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(92): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#9 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#10 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#11 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Server.php(80): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#12 C:\wamp64\www\ProjetWeb\webroot\index.php(37): Cake\Http\Server->run()
+#13 {main}
+
+
+2017-03-25 14:29:31 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Fonts could not be found.
+Exception Attributes: array (
+  'class' => 'Fonts',
+  'plugin' => false,
+  'prefix' => false,
+  '_ext' => false,
+)
+Request URL: /fonts/glyphicons-halflings-regular.ttf
+Referer URL: http://localhost/ProjetWeb/css/bootstrap.css
+Stack Trace:
+#0 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\ControllerFactory.php(70): Cake\Http\ControllerFactory->missingController(Object(Cake\Http\ServerRequest))
+#1 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(90): Cake\Http\ControllerFactory->create(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#2 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\BaseApplication.php(78): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#3 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#4 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(59): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#5 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#6 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(93): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#7 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#8 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(92): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#9 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#10 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#11 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Server.php(80): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#12 C:\wamp64\www\ProjetWeb\webroot\index.php(37): Cake\Http\Server->run()
+#13 {main}
+
+
+2017-03-25 14:30:36 Error: Fatal Error (1): Call to a member function findforHall() on boolean in [C:\wamp64\www\ProjetWeb\src\Controller\AccountsController.php, line 111]
+Request URL: /accounts/halloffame
+Referer URL: http://localhost/ProjetWeb/accounts
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE\src\Error\BaseErrorHandler.php, line 223
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE\src\Error\BaseErrorHandler.php, line 105
+[main] - [internal], line ??
+
+
+
+2017-03-25 14:30:37 Warning: Headers already sent in C:\wamp64\www\ProjetWeb\src\Controller\AccountsController.php:111
+2017-03-25 14:30:37 Error: [Cake\Error\FatalErrorException] Call to a member function findforHall() on boolean in C:\wamp64\www\ProjetWeb\src\Controller\AccountsController.php on line 111
+Request URL: /accounts/halloffame
+Referer URL: http://localhost/ProjetWeb/accounts
+Stack Trace:
+#0 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Error\BaseErrorHandler.php(105): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Call to a membe...', 'C:\\wamp64\\www\\P...', 111)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2017-03-25 14:30:42 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Fonts could not be found.
+Exception Attributes: array (
+  'class' => 'Fonts',
+  'plugin' => false,
+  'prefix' => false,
+  '_ext' => false,
+)
+Request URL: /fonts/glyphicons-halflings-regular.woff2
+Referer URL: http://localhost/ProjetWeb/css/bootstrap.css
+Stack Trace:
+#0 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\ControllerFactory.php(70): Cake\Http\ControllerFactory->missingController(Object(Cake\Http\ServerRequest))
+#1 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(90): Cake\Http\ControllerFactory->create(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#2 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\BaseApplication.php(78): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#3 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#4 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(59): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#5 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#6 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(93): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#7 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#8 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(92): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#9 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#10 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#11 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Server.php(80): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#12 C:\wamp64\www\ProjetWeb\webroot\index.php(37): Cake\Http\Server->run()
+#13 {main}
+
+
+2017-03-25 14:30:42 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Fonts could not be found.
+Exception Attributes: array (
+  'class' => 'Fonts',
+  'plugin' => false,
+  'prefix' => false,
+  '_ext' => false,
+)
+Request URL: /fonts/glyphicons-halflings-regular.woff
+Referer URL: http://localhost/ProjetWeb/css/bootstrap.css
+Stack Trace:
+#0 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\ControllerFactory.php(70): Cake\Http\ControllerFactory->missingController(Object(Cake\Http\ServerRequest))
+#1 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(90): Cake\Http\ControllerFactory->create(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#2 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\BaseApplication.php(78): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#3 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#4 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(59): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#5 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#6 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(93): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#7 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#8 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(92): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#9 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#10 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#11 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Server.php(80): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#12 C:\wamp64\www\ProjetWeb\webroot\index.php(37): Cake\Http\Server->run()
+#13 {main}
+
+
+2017-03-25 14:30:43 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Fonts could not be found.
+Exception Attributes: array (
+  'class' => 'Fonts',
+  'plugin' => false,
+  'prefix' => false,
+  '_ext' => false,
+)
+Request URL: /fonts/glyphicons-halflings-regular.ttf
+Referer URL: http://localhost/ProjetWeb/css/bootstrap.css
+Stack Trace:
+#0 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\ControllerFactory.php(70): Cake\Http\ControllerFactory->missingController(Object(Cake\Http\ServerRequest))
+#1 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(90): Cake\Http\ControllerFactory->create(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#2 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\BaseApplication.php(78): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#3 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#4 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(59): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#5 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#6 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(93): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#7 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#8 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(92): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#9 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#10 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#11 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Server.php(80): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#12 C:\wamp64\www\ProjetWeb\webroot\index.php(37): Cake\Http\Server->run()
+#13 {main}
+
+
+2017-03-25 14:30:44 Error: Fatal Error (1): Call to a member function findforHall() on boolean in [C:\wamp64\www\ProjetWeb\src\Controller\AccountsController.php, line 111]
+Request URL: /accounts/halloffame
+Referer URL: http://localhost/ProjetWeb/accounts
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE\src\Error\BaseErrorHandler.php, line 223
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE\src\Error\BaseErrorHandler.php, line 105
+[main] - [internal], line ??
+
+
+
+2017-03-25 14:30:44 Warning: Headers already sent in C:\wamp64\www\ProjetWeb\src\Controller\AccountsController.php:111
+2017-03-25 14:30:44 Error: [Cake\Error\FatalErrorException] Call to a member function findforHall() on boolean in C:\wamp64\www\ProjetWeb\src\Controller\AccountsController.php on line 111
+Request URL: /accounts/halloffame
+Referer URL: http://localhost/ProjetWeb/accounts
+Stack Trace:
+#0 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Error\BaseErrorHandler.php(105): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Call to a membe...', 'C:\\wamp64\\www\\P...', 111)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2017-03-25 14:30:47 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Fonts could not be found.
+Exception Attributes: array (
+  'class' => 'Fonts',
+  'plugin' => false,
+  'prefix' => false,
+  '_ext' => false,
+)
+Request URL: /fonts/glyphicons-halflings-regular.woff2
+Referer URL: http://localhost/ProjetWeb/css/bootstrap.css
+Stack Trace:
+#0 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\ControllerFactory.php(70): Cake\Http\ControllerFactory->missingController(Object(Cake\Http\ServerRequest))
+#1 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(90): Cake\Http\ControllerFactory->create(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#2 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\BaseApplication.php(78): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#3 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#4 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(59): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#5 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#6 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(93): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#7 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#8 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(92): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#9 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#10 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#11 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Server.php(80): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#12 C:\wamp64\www\ProjetWeb\webroot\index.php(37): Cake\Http\Server->run()
+#13 {main}
+
+
+2017-03-25 14:30:48 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Fonts could not be found.
+Exception Attributes: array (
+  'class' => 'Fonts',
+  'plugin' => false,
+  'prefix' => false,
+  '_ext' => false,
+)
+Request URL: /fonts/glyphicons-halflings-regular.woff
+Referer URL: http://localhost/ProjetWeb/css/bootstrap.css
+Stack Trace:
+#0 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\ControllerFactory.php(70): Cake\Http\ControllerFactory->missingController(Object(Cake\Http\ServerRequest))
+#1 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(90): Cake\Http\ControllerFactory->create(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#2 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\BaseApplication.php(78): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#3 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#4 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(59): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#5 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#6 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(93): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#7 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#8 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(92): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#9 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#10 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#11 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Server.php(80): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#12 C:\wamp64\www\ProjetWeb\webroot\index.php(37): Cake\Http\Server->run()
+#13 {main}
+
+
+2017-03-25 14:30:49 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Fonts could not be found.
+Exception Attributes: array (
+  'class' => 'Fonts',
+  'plugin' => false,
+  'prefix' => false,
+  '_ext' => false,
+)
+Request URL: /fonts/glyphicons-halflings-regular.ttf
+Referer URL: http://localhost/ProjetWeb/css/bootstrap.css
+Stack Trace:
+#0 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\ControllerFactory.php(70): Cake\Http\ControllerFactory->missingController(Object(Cake\Http\ServerRequest))
+#1 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(90): Cake\Http\ControllerFactory->create(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#2 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\BaseApplication.php(78): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#3 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#4 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(59): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#5 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#6 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(93): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#7 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#8 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(92): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#9 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#10 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#11 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Server.php(80): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#12 C:\wamp64\www\ProjetWeb\webroot\index.php(37): Cake\Http\Server->run()
+#13 {main}
+
+
+2017-03-25 14:30:50 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Fonts could not be found.
+Exception Attributes: array (
+  'class' => 'Fonts',
+  'plugin' => false,
+  'prefix' => false,
+  '_ext' => false,
+)
+Request URL: /fonts/glyphicons-halflings-regular.woff2
+Referer URL: http://localhost/ProjetWeb/css/bootstrap.css
+Stack Trace:
+#0 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\ControllerFactory.php(70): Cake\Http\ControllerFactory->missingController(Object(Cake\Http\ServerRequest))
+#1 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(90): Cake\Http\ControllerFactory->create(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#2 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\BaseApplication.php(78): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#3 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#4 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(59): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#5 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#6 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(93): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#7 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#8 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(92): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#9 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#10 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#11 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Server.php(80): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#12 C:\wamp64\www\ProjetWeb\webroot\index.php(37): Cake\Http\Server->run()
+#13 {main}
+
+
+2017-03-25 14:30:51 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Fonts could not be found.
+Exception Attributes: array (
+  'class' => 'Fonts',
+  'plugin' => false,
+  'prefix' => false,
+  '_ext' => false,
+)
+Request URL: /fonts/glyphicons-halflings-regular.woff
+Referer URL: http://localhost/ProjetWeb/css/bootstrap.css
+Stack Trace:
+#0 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\ControllerFactory.php(70): Cake\Http\ControllerFactory->missingController(Object(Cake\Http\ServerRequest))
+#1 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(90): Cake\Http\ControllerFactory->create(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#2 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\BaseApplication.php(78): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#3 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#4 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(59): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#5 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#6 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(93): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#7 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#8 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(92): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#9 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#10 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#11 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Server.php(80): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#12 C:\wamp64\www\ProjetWeb\webroot\index.php(37): Cake\Http\Server->run()
+#13 {main}
+
+
+2017-03-25 14:30:52 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Fonts could not be found.
+Exception Attributes: array (
+  'class' => 'Fonts',
+  'plugin' => false,
+  'prefix' => false,
+  '_ext' => false,
+)
+Request URL: /fonts/glyphicons-halflings-regular.ttf
+Referer URL: http://localhost/ProjetWeb/css/bootstrap.css
+Stack Trace:
+#0 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\ControllerFactory.php(70): Cake\Http\ControllerFactory->missingController(Object(Cake\Http\ServerRequest))
+#1 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(90): Cake\Http\ControllerFactory->create(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#2 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\BaseApplication.php(78): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#3 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#4 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(59): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#5 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#6 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(93): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#7 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#8 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(92): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#9 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#10 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#11 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Server.php(80): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#12 C:\wamp64\www\ProjetWeb\webroot\index.php(37): Cake\Http\Server->run()
+#13 {main}
+
+
+2017-03-25 14:32:12 Error: Fatal Error (1): Call to a member function findforHall() on boolean in [C:\wamp64\www\ProjetWeb\src\Controller\AccountsController.php, line 111]
+Request URL: /accounts/halloffame
+Referer URL: http://localhost/ProjetWeb/accounts
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE\src\Error\BaseErrorHandler.php, line 223
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE\src\Error\BaseErrorHandler.php, line 105
+[main] - [internal], line ??
+
+
+
+2017-03-25 14:32:12 Warning: Headers already sent in C:\wamp64\www\ProjetWeb\src\Controller\AccountsController.php:111
+2017-03-25 14:32:12 Error: [Cake\Error\FatalErrorException] Call to a member function findforHall() on boolean in C:\wamp64\www\ProjetWeb\src\Controller\AccountsController.php on line 111
+Request URL: /accounts/halloffame
+Referer URL: http://localhost/ProjetWeb/accounts
+Stack Trace:
+#0 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Error\BaseErrorHandler.php(105): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Call to a membe...', 'C:\\wamp64\\www\\P...', 111)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2017-03-25 14:32:16 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Fonts could not be found.
+Exception Attributes: array (
+  'class' => 'Fonts',
+  'plugin' => false,
+  'prefix' => false,
+  '_ext' => false,
+)
+Request URL: /fonts/glyphicons-halflings-regular.woff2
+Referer URL: http://localhost/ProjetWeb/css/bootstrap.css
+Stack Trace:
+#0 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\ControllerFactory.php(70): Cake\Http\ControllerFactory->missingController(Object(Cake\Http\ServerRequest))
+#1 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(90): Cake\Http\ControllerFactory->create(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#2 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\BaseApplication.php(78): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#3 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#4 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(59): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#5 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#6 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(93): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#7 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#8 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(92): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#9 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#10 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#11 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Server.php(80): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#12 C:\wamp64\www\ProjetWeb\webroot\index.php(37): Cake\Http\Server->run()
+#13 {main}
+
+
+2017-03-25 14:32:17 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Fonts could not be found.
+Exception Attributes: array (
+  'class' => 'Fonts',
+  'plugin' => false,
+  'prefix' => false,
+  '_ext' => false,
+)
+Request URL: /fonts/glyphicons-halflings-regular.woff
+Referer URL: http://localhost/ProjetWeb/css/bootstrap.css
+Stack Trace:
+#0 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\ControllerFactory.php(70): Cake\Http\ControllerFactory->missingController(Object(Cake\Http\ServerRequest))
+#1 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(90): Cake\Http\ControllerFactory->create(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#2 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\BaseApplication.php(78): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#3 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#4 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(59): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#5 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#6 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(93): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#7 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#8 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(92): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#9 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#10 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#11 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Server.php(80): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#12 C:\wamp64\www\ProjetWeb\webroot\index.php(37): Cake\Http\Server->run()
+#13 {main}
+
+
+2017-03-25 14:32:18 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Fonts could not be found.
+Exception Attributes: array (
+  'class' => 'Fonts',
+  'plugin' => false,
+  'prefix' => false,
+  '_ext' => false,
+)
+Request URL: /fonts/glyphicons-halflings-regular.ttf
+Referer URL: http://localhost/ProjetWeb/css/bootstrap.css
+Stack Trace:
+#0 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\ControllerFactory.php(70): Cake\Http\ControllerFactory->missingController(Object(Cake\Http\ServerRequest))
+#1 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(90): Cake\Http\ControllerFactory->create(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#2 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\BaseApplication.php(78): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#3 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#4 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(59): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#5 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#6 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(93): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#7 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#8 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(92): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#9 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#10 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#11 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Server.php(80): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#12 C:\wamp64\www\ProjetWeb\webroot\index.php(37): Cake\Http\Server->run()
+#13 {main}
+
+
+2017-03-25 14:32:19 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Fonts could not be found.
+Exception Attributes: array (
+  'class' => 'Fonts',
+  'plugin' => false,
+  'prefix' => false,
+  '_ext' => false,
+)
+Request URL: /fonts/glyphicons-halflings-regular.woff2
+Referer URL: http://localhost/ProjetWeb/css/bootstrap.css
+Stack Trace:
+#0 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\ControllerFactory.php(70): Cake\Http\ControllerFactory->missingController(Object(Cake\Http\ServerRequest))
+#1 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(90): Cake\Http\ControllerFactory->create(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#2 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\BaseApplication.php(78): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#3 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#4 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(59): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#5 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#6 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(93): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#7 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#8 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(92): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#9 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#10 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#11 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Server.php(80): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#12 C:\wamp64\www\ProjetWeb\webroot\index.php(37): Cake\Http\Server->run()
+#13 {main}
+
+
+2017-03-25 14:32:20 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Fonts could not be found.
+Exception Attributes: array (
+  'class' => 'Fonts',
+  'plugin' => false,
+  'prefix' => false,
+  '_ext' => false,
+)
+Request URL: /fonts/glyphicons-halflings-regular.woff
+Referer URL: http://localhost/ProjetWeb/css/bootstrap.css
+Stack Trace:
+#0 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\ControllerFactory.php(70): Cake\Http\ControllerFactory->missingController(Object(Cake\Http\ServerRequest))
+#1 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(90): Cake\Http\ControllerFactory->create(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#2 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\BaseApplication.php(78): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#3 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#4 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(59): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#5 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#6 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(93): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#7 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#8 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(92): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#9 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#10 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#11 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Server.php(80): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#12 C:\wamp64\www\ProjetWeb\webroot\index.php(37): Cake\Http\Server->run()
+#13 {main}
+
+
+2017-03-25 14:32:21 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Fonts could not be found.
+Exception Attributes: array (
+  'class' => 'Fonts',
+  'plugin' => false,
+  'prefix' => false,
+  '_ext' => false,
+)
+Request URL: /fonts/glyphicons-halflings-regular.ttf
+Referer URL: http://localhost/ProjetWeb/css/bootstrap.css
+Stack Trace:
+#0 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\ControllerFactory.php(70): Cake\Http\ControllerFactory->missingController(Object(Cake\Http\ServerRequest))
+#1 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(90): Cake\Http\ControllerFactory->create(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#2 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\BaseApplication.php(78): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#3 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#4 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(59): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#5 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#6 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(93): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#7 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#8 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(92): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#9 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#10 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#11 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Server.php(80): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#12 C:\wamp64\www\ProjetWeb\webroot\index.php(37): Cake\Http\Server->run()
+#13 {main}
+
+
+2017-03-25 14:32:31 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Fonts could not be found.
+Exception Attributes: array (
+  'class' => 'Fonts',
+  'plugin' => false,
+  'prefix' => false,
+  '_ext' => false,
+)
+Request URL: /fonts/glyphicons-halflings-regular.woff2
+Referer URL: http://localhost/ProjetWeb/css/bootstrap.css
+Stack Trace:
+#0 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\ControllerFactory.php(70): Cake\Http\ControllerFactory->missingController(Object(Cake\Http\ServerRequest))
+#1 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(90): Cake\Http\ControllerFactory->create(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#2 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\BaseApplication.php(78): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#3 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#4 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(59): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#5 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#6 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(93): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#7 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#8 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(92): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#9 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#10 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#11 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Server.php(80): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#12 C:\wamp64\www\ProjetWeb\webroot\index.php(37): Cake\Http\Server->run()
+#13 {main}
+
+
+2017-03-25 14:32:32 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Fonts could not be found.
+Exception Attributes: array (
+  'class' => 'Fonts',
+  'plugin' => false,
+  'prefix' => false,
+  '_ext' => false,
+)
+Request URL: /fonts/glyphicons-halflings-regular.woff
+Referer URL: http://localhost/ProjetWeb/css/bootstrap.css
+Stack Trace:
+#0 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\ControllerFactory.php(70): Cake\Http\ControllerFactory->missingController(Object(Cake\Http\ServerRequest))
+#1 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(90): Cake\Http\ControllerFactory->create(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#2 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\BaseApplication.php(78): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#3 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#4 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(59): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#5 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#6 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(93): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#7 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#8 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(92): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#9 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#10 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#11 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Server.php(80): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#12 C:\wamp64\www\ProjetWeb\webroot\index.php(37): Cake\Http\Server->run()
+#13 {main}
+
+
+2017-03-25 14:32:33 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Fonts could not be found.
+Exception Attributes: array (
+  'class' => 'Fonts',
+  'plugin' => false,
+  'prefix' => false,
+  '_ext' => false,
+)
+Request URL: /fonts/glyphicons-halflings-regular.ttf
+Referer URL: http://localhost/ProjetWeb/css/bootstrap.css
+Stack Trace:
+#0 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\ControllerFactory.php(70): Cake\Http\ControllerFactory->missingController(Object(Cake\Http\ServerRequest))
+#1 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(90): Cake\Http\ControllerFactory->create(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#2 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\BaseApplication.php(78): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#3 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#4 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(59): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#5 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#6 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(93): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#7 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#8 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(92): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#9 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#10 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#11 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Server.php(80): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#12 C:\wamp64\www\ProjetWeb\webroot\index.php(37): Cake\Http\Server->run()
+#13 {main}
+
+
+2017-03-25 14:32:34 Error: Fatal Error (1): Call to a member function findforHall() on boolean in [C:\wamp64\www\ProjetWeb\src\Controller\AccountsController.php, line 111]
+Request URL: /accounts/halloffame
+Referer URL: http://localhost/ProjetWeb/accounts
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE\src\Error\BaseErrorHandler.php, line 223
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE\src\Error\BaseErrorHandler.php, line 105
+[main] - [internal], line ??
+
+
+
+2017-03-25 14:32:34 Warning: Headers already sent in C:\wamp64\www\ProjetWeb\src\Controller\AccountsController.php:111
+2017-03-25 14:32:34 Error: [Cake\Error\FatalErrorException] Call to a member function findforHall() on boolean in C:\wamp64\www\ProjetWeb\src\Controller\AccountsController.php on line 111
+Request URL: /accounts/halloffame
+Referer URL: http://localhost/ProjetWeb/accounts
+Stack Trace:
+#0 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Error\BaseErrorHandler.php(105): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Call to a membe...', 'C:\\wamp64\\www\\P...', 111)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2017-03-25 14:32:37 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Fonts could not be found.
+Exception Attributes: array (
+  'class' => 'Fonts',
+  'plugin' => false,
+  'prefix' => false,
+  '_ext' => false,
+)
+Request URL: /fonts/glyphicons-halflings-regular.woff2
+Referer URL: http://localhost/ProjetWeb/css/bootstrap.css
+Stack Trace:
+#0 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\ControllerFactory.php(70): Cake\Http\ControllerFactory->missingController(Object(Cake\Http\ServerRequest))
+#1 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(90): Cake\Http\ControllerFactory->create(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#2 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\BaseApplication.php(78): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#3 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#4 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(59): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#5 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#6 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(93): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#7 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#8 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(92): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#9 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#10 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#11 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Server.php(80): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#12 C:\wamp64\www\ProjetWeb\webroot\index.php(37): Cake\Http\Server->run()
+#13 {main}
+
+
+2017-03-25 14:32:38 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Fonts could not be found.
+Exception Attributes: array (
+  'class' => 'Fonts',
+  'plugin' => false,
+  'prefix' => false,
+  '_ext' => false,
+)
+Request URL: /fonts/glyphicons-halflings-regular.woff
+Referer URL: http://localhost/ProjetWeb/css/bootstrap.css
+Stack Trace:
+#0 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\ControllerFactory.php(70): Cake\Http\ControllerFactory->missingController(Object(Cake\Http\ServerRequest))
+#1 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(90): Cake\Http\ControllerFactory->create(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#2 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\BaseApplication.php(78): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#3 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#4 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(59): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#5 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#6 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(93): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#7 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#8 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(92): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#9 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#10 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#11 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Server.php(80): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#12 C:\wamp64\www\ProjetWeb\webroot\index.php(37): Cake\Http\Server->run()
+#13 {main}
+
+
+2017-03-25 14:32:39 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Fonts could not be found.
+Exception Attributes: array (
+  'class' => 'Fonts',
+  'plugin' => false,
+  'prefix' => false,
+  '_ext' => false,
+)
+Request URL: /fonts/glyphicons-halflings-regular.ttf
+Referer URL: http://localhost/ProjetWeb/css/bootstrap.css
+Stack Trace:
+#0 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\ControllerFactory.php(70): Cake\Http\ControllerFactory->missingController(Object(Cake\Http\ServerRequest))
+#1 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(90): Cake\Http\ControllerFactory->create(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#2 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\BaseApplication.php(78): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#3 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#4 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(59): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#5 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#6 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(93): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#7 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#8 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(92): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#9 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#10 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#11 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Server.php(80): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#12 C:\wamp64\www\ProjetWeb\webroot\index.php(37): Cake\Http\Server->run()
+#13 {main}
+
+
+2017-03-25 14:33:06 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\wamp64\www\ProjetWeb\src\Template\Accounts\myworkouts.ctp, line 24]
+Request URL: /accounts/myworkouts
+Referer URL: http://localhost/ProjetWeb/accounts
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 153
+include - APP/Template\Accounts\myworkouts.ctp, line 24
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 1011
+Cake\View\View::_render() - CORE\src\View\View.php, line 972
+Cake\View\View::render() - CORE\src\View\View.php, line 596
+Cake\Controller\Controller::render() - CORE\src\Controller\Controller.php, line 623
+Cake\Http\ActionDispatcher::_invoke() - CORE\src\Http\ActionDispatcher.php, line 125
+Cake\Http\ActionDispatcher::dispatch() - CORE\src\Http\ActionDispatcher.php, line 93
+Cake\Http\BaseApplication::__invoke() - CORE\src\Http\BaseApplication.php, line 78
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Routing\Middleware\RoutingMiddleware::__invoke() - CORE\src\Routing\Middleware\RoutingMiddleware.php, line 59
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Routing\Middleware\AssetMiddleware::__invoke() - CORE\src\Routing\Middleware\AssetMiddleware.php, line 88
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Error\Middleware\ErrorHandlerMiddleware::__invoke() - CORE\src\Error\Middleware\ErrorHandlerMiddleware.php, line 92
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Http\Runner::run() - CORE\src\Http\Runner.php, line 51
+Cake\Http\Server::run() - CORE\src\Http\Server.php, line 80
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2017-03-25 14:33:06 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\wamp64\www\ProjetWeb\src\Template\Accounts\myworkouts.ctp, line 56]
+Request URL: /accounts/myworkouts
+Referer URL: http://localhost/ProjetWeb/accounts
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 153
+include - APP/Template\Accounts\myworkouts.ctp, line 56
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 1011
+Cake\View\View::_render() - CORE\src\View\View.php, line 972
+Cake\View\View::render() - CORE\src\View\View.php, line 596
+Cake\Controller\Controller::render() - CORE\src\Controller\Controller.php, line 623
+Cake\Http\ActionDispatcher::_invoke() - CORE\src\Http\ActionDispatcher.php, line 125
+Cake\Http\ActionDispatcher::dispatch() - CORE\src\Http\ActionDispatcher.php, line 93
+Cake\Http\BaseApplication::__invoke() - CORE\src\Http\BaseApplication.php, line 78
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Routing\Middleware\RoutingMiddleware::__invoke() - CORE\src\Routing\Middleware\RoutingMiddleware.php, line 59
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Routing\Middleware\AssetMiddleware::__invoke() - CORE\src\Routing\Middleware\AssetMiddleware.php, line 88
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Error\Middleware\ErrorHandlerMiddleware::__invoke() - CORE\src\Error\Middleware\ErrorHandlerMiddleware.php, line 92
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Http\Runner::run() - CORE\src\Http\Runner.php, line 51
+Cake\Http\Server::run() - CORE\src\Http\Server.php, line 80
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2017-03-25 14:33:06 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\wamp64\www\ProjetWeb\src\Template\Accounts\myworkouts.ctp, line 89]
+Request URL: /accounts/myworkouts
+Referer URL: http://localhost/ProjetWeb/accounts
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 153
+include - APP/Template\Accounts\myworkouts.ctp, line 89
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 1011
+Cake\View\View::_render() - CORE\src\View\View.php, line 972
+Cake\View\View::render() - CORE\src\View\View.php, line 596
+Cake\Controller\Controller::render() - CORE\src\Controller\Controller.php, line 623
+Cake\Http\ActionDispatcher::_invoke() - CORE\src\Http\ActionDispatcher.php, line 125
+Cake\Http\ActionDispatcher::dispatch() - CORE\src\Http\ActionDispatcher.php, line 93
+Cake\Http\BaseApplication::__invoke() - CORE\src\Http\BaseApplication.php, line 78
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Routing\Middleware\RoutingMiddleware::__invoke() - CORE\src\Routing\Middleware\RoutingMiddleware.php, line 59
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Routing\Middleware\AssetMiddleware::__invoke() - CORE\src\Routing\Middleware\AssetMiddleware.php, line 88
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Error\Middleware\ErrorHandlerMiddleware::__invoke() - CORE\src\Error\Middleware\ErrorHandlerMiddleware.php, line 92
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Http\Runner::run() - CORE\src\Http\Runner.php, line 51
+Cake\Http\Server::run() - CORE\src\Http\Server.php, line 80
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2017-03-25 14:33:06 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\wamp64\www\ProjetWeb\src\Template\Accounts\myworkouts.ctp, line 122]
+Request URL: /accounts/myworkouts
+Referer URL: http://localhost/ProjetWeb/accounts
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 153
+include - APP/Template\Accounts\myworkouts.ctp, line 122
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 1011
+Cake\View\View::_render() - CORE\src\View\View.php, line 972
+Cake\View\View::render() - CORE\src\View\View.php, line 596
+Cake\Controller\Controller::render() - CORE\src\Controller\Controller.php, line 623
+Cake\Http\ActionDispatcher::_invoke() - CORE\src\Http\ActionDispatcher.php, line 125
+Cake\Http\ActionDispatcher::dispatch() - CORE\src\Http\ActionDispatcher.php, line 93
+Cake\Http\BaseApplication::__invoke() - CORE\src\Http\BaseApplication.php, line 78
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Routing\Middleware\RoutingMiddleware::__invoke() - CORE\src\Routing\Middleware\RoutingMiddleware.php, line 59
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Routing\Middleware\AssetMiddleware::__invoke() - CORE\src\Routing\Middleware\AssetMiddleware.php, line 88
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Error\Middleware\ErrorHandlerMiddleware::__invoke() - CORE\src\Error\Middleware\ErrorHandlerMiddleware.php, line 92
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Http\Runner::run() - CORE\src\Http\Runner.php, line 51
+Cake\Http\Server::run() - CORE\src\Http\Server.php, line 80
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2017-03-25 14:33:06 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\wamp64\www\ProjetWeb\src\Template\Accounts\myworkouts.ctp, line 155]
+Request URL: /accounts/myworkouts
+Referer URL: http://localhost/ProjetWeb/accounts
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 153
+include - APP/Template\Accounts\myworkouts.ctp, line 155
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 1011
+Cake\View\View::_render() - CORE\src\View\View.php, line 972
+Cake\View\View::render() - CORE\src\View\View.php, line 596
+Cake\Controller\Controller::render() - CORE\src\Controller\Controller.php, line 623
+Cake\Http\ActionDispatcher::_invoke() - CORE\src\Http\ActionDispatcher.php, line 125
+Cake\Http\ActionDispatcher::dispatch() - CORE\src\Http\ActionDispatcher.php, line 93
+Cake\Http\BaseApplication::__invoke() - CORE\src\Http\BaseApplication.php, line 78
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Routing\Middleware\RoutingMiddleware::__invoke() - CORE\src\Routing\Middleware\RoutingMiddleware.php, line 59
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Routing\Middleware\AssetMiddleware::__invoke() - CORE\src\Routing\Middleware\AssetMiddleware.php, line 88
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Error\Middleware\ErrorHandlerMiddleware::__invoke() - CORE\src\Error\Middleware\ErrorHandlerMiddleware.php, line 92
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Http\Runner::run() - CORE\src\Http\Runner.php, line 51
+Cake\Http\Server::run() - CORE\src\Http\Server.php, line 80
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2017-03-25 14:33:06 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\wamp64\www\ProjetWeb\src\Template\Accounts\myworkouts.ctp, line 188]
+Request URL: /accounts/myworkouts
+Referer URL: http://localhost/ProjetWeb/accounts
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 153
+include - APP/Template\Accounts\myworkouts.ctp, line 188
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 1011
+Cake\View\View::_render() - CORE\src\View\View.php, line 972
+Cake\View\View::render() - CORE\src\View\View.php, line 596
+Cake\Controller\Controller::render() - CORE\src\Controller\Controller.php, line 623
+Cake\Http\ActionDispatcher::_invoke() - CORE\src\Http\ActionDispatcher.php, line 125
+Cake\Http\ActionDispatcher::dispatch() - CORE\src\Http\ActionDispatcher.php, line 93
+Cake\Http\BaseApplication::__invoke() - CORE\src\Http\BaseApplication.php, line 78
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Routing\Middleware\RoutingMiddleware::__invoke() - CORE\src\Routing\Middleware\RoutingMiddleware.php, line 59
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Routing\Middleware\AssetMiddleware::__invoke() - CORE\src\Routing\Middleware\AssetMiddleware.php, line 88
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Error\Middleware\ErrorHandlerMiddleware::__invoke() - CORE\src\Error\Middleware\ErrorHandlerMiddleware.php, line 92
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Http\Runner::run() - CORE\src\Http\Runner.php, line 51
+Cake\Http\Server::run() - CORE\src\Http\Server.php, line 80
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2017-03-25 14:33:07 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Fonts could not be found.
+Exception Attributes: array (
+  'class' => 'Fonts',
+  'plugin' => false,
+  'prefix' => false,
+  '_ext' => false,
+)
+Request URL: /fonts/glyphicons-halflings-regular.woff2
+Referer URL: http://localhost/ProjetWeb/css/bootstrap.css
+Stack Trace:
+#0 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\ControllerFactory.php(70): Cake\Http\ControllerFactory->missingController(Object(Cake\Http\ServerRequest))
+#1 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(90): Cake\Http\ControllerFactory->create(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#2 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\BaseApplication.php(78): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#3 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#4 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(59): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#5 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#6 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(93): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#7 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#8 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(92): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#9 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#10 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#11 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Server.php(80): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#12 C:\wamp64\www\ProjetWeb\webroot\index.php(37): Cake\Http\Server->run()
+#13 {main}
+
+
+2017-03-25 14:33:08 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Fonts could not be found.
+Exception Attributes: array (
+  'class' => 'Fonts',
+  'plugin' => false,
+  'prefix' => false,
+  '_ext' => false,
+)
+Request URL: /fonts/glyphicons-halflings-regular.woff
+Referer URL: http://localhost/ProjetWeb/css/bootstrap.css
+Stack Trace:
+#0 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\ControllerFactory.php(70): Cake\Http\ControllerFactory->missingController(Object(Cake\Http\ServerRequest))
+#1 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(90): Cake\Http\ControllerFactory->create(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#2 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\BaseApplication.php(78): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#3 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#4 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(59): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#5 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#6 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(93): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#7 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#8 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(92): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#9 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#10 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#11 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Server.php(80): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#12 C:\wamp64\www\ProjetWeb\webroot\index.php(37): Cake\Http\Server->run()
+#13 {main}
+
+
+2017-03-25 14:33:09 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Fonts could not be found.
+Exception Attributes: array (
+  'class' => 'Fonts',
+  'plugin' => false,
+  'prefix' => false,
+  '_ext' => false,
+)
+Request URL: /fonts/glyphicons-halflings-regular.ttf
+Referer URL: http://localhost/ProjetWeb/css/bootstrap.css
+Stack Trace:
+#0 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\ControllerFactory.php(70): Cake\Http\ControllerFactory->missingController(Object(Cake\Http\ServerRequest))
+#1 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(90): Cake\Http\ControllerFactory->create(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#2 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\BaseApplication.php(78): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#3 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#4 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(59): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#5 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#6 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(93): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#7 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#8 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(92): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#9 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#10 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#11 C:\wamp64\www\ProjetWeb\vendor\cakephp\cakephp\src\Http\Server.php(80): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#12 C:\wamp64\www\ProjetWeb\webroot\index.php(37): Cake\Http\Server->run()
+#13 {main}
+
+
