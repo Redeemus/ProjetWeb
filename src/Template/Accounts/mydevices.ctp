@@ -20,14 +20,18 @@
 
 		<a href="#supprimer">supprimer un appareil</a>
 		<a href="#valider">valider un appareil</a>
-		
+                
 
         <h2 id="autorise">
             Liste de mes objets connectés autorisés à faire des modifications :
         </h2>
 
-
-        <table class="table table-striped">
+        <?php if (empty($trusted)) {
+            ?>
+            <p>Vous n'avez pas encore entré d'appareil</p>
+            <?php
+        } else {?>
+            <table class="table table-striped">
             <?php
             $cpt = 0;
             echo '<tr class="success">';
@@ -47,13 +51,20 @@
             }
             ?>
         </table>
+        <?php } ?>
+        
 
 
         <h2 id="validation">
             Liste de mes objets connectés en attente de validation :
         </h2>
-
-        <table class="table table-striped">
+            
+            <?php if (empty($nottrusted)) {
+            ?>
+            <p>Vous n'avez pas encore entré d'appareil</p>
+            <?php
+        } else {?>
+            <table class="table table-striped">
             <?php
             echo '<tr class="warning">';
             echo '<th class="col-md-3"><div class="text-center">  Id  </div></th>';
@@ -73,10 +84,19 @@
             }
             ?>
         </table>
+        <?php } ?>
+
+        
 
         <div class="alig">
             <div class="row">
-                <?php echo $this->Form->create('devicedel'); ?>
+                <?php if (empty($listeiddel)) {
+                    ?>
+                    <p>Pas d'appareils supprimés</p>
+                    <?php
+                } else {?>
+                    
+                    <?php echo $this->Form->create('devicedel'); ?>
                 <div class="col-md-6">
                     <h2 id="supprimer">Supprimer un appareil</h2>
                     <form>
@@ -85,9 +105,16 @@
                         <?php echo $this->Form->end(); ?>
                     </form>
                 </div>
-
-                <?php echo $this->Form->create('deviceval'); ?>
-                <div class="col-md-6">
+            
+        <?php } ?>
+                
+                <?php if (empty($listeidval)) {
+                    ?>
+                    <p>Pas d'appareil à valider</p>
+                    <?php
+                } else {?>
+                    <?php echo $this->Form->create('deviceval'); ?>
+                    <div class="col-md-6">
                     <h2 id="valider">Valider un appareil</h2>
                     <form>
                         <?php echo $this->Form->input('id', array('options' => $listeidval)); ?>
@@ -95,5 +122,7 @@
                         <?php echo $this->Form->end(); ?>
                     </form>
                 </div>
+             <?php } ?>   
             </div>
         </div>
+ }

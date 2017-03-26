@@ -60,7 +60,7 @@
                             </ul>
                         </li>
                         <li><?php
-                            if ($this->request->session() !== null) {
+                            if ($this->request->session()->read('Members.id') !== null) {
                                 echo $this->Html->link('Deconnexion', array('controller' => 'Accounts', 'action' => 'logout'));
                             } else {
                                 echo $this->Html->link('Connexion', array('controller' => 'Accounts', 'action' => 'connexion'));

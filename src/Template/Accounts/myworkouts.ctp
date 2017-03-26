@@ -72,14 +72,14 @@
     
 
             foreach ($work as $value) {
-                if ($work[$cpt]['Workout']['date'] > date('Y-m-d H:i:s')) {
+                if ($work[$cpt]['date'] > date('Y-m-d H:i:s')) {
                     echo '<tr>';
-                    echo '<td><div class="text-center">' . $work[$cpt]['Workout']['date'] . ' </div></td>';
-                    echo '<td><div class="text-center">' . $work[$cpt]['Workout']['end_date'] . ' </div></td>';
-                    echo '<td><div class="text-center">' . $work[$cpt]['Workout']['location_name'] . ' </div></td>';
-                    echo '<td><div class="text-center">' . $work[$cpt]['Workout']['sport'] . ' </div></td>';
-                    echo '<td><div class="text-center">' . $work[$cpt]['Workout']['description'] . ' </div></td>';
-                    echo '<td><div class="text-center">' . $work[$cpt]['Workout']['contest_id'] . ' </div></td>';
+                    echo '<td><div class="text-center">' . $work[$cpt]['date'] . ' </div></td>';
+                    echo '<td><div class="text-center">' . $work[$cpt]['end_date'] . ' </div></td>';
+                    echo '<td><div class="text-center">' . $work[$cpt]['location_name'] . ' </div></td>';
+                    echo '<td><div class="text-center">' . $work[$cpt]['sport'] . ' </div></td>';
+                    echo '<td><div class="text-center">' . $work[$cpt]['description'] . ' </div></td>';
+                    echo '<td><div class="text-center">' . $work[$cpt]['contest_id'] . ' </div></td>';
                     echo '</tr>';
                 }
                 $cpt++;
@@ -105,14 +105,14 @@
     echo '</tr>';
     
             foreach ($work as $value) {
-                if ($work[$cpt]['Workout']['contest_id'] != NULL) {
+                if ($work[$cpt]['contest_id'] != NULL) {
                     echo '<tr>';
-                    echo '<td><div class="text-center">' . $work[$cpt]['Workout']['date'] . ' </div></td>';
-                    echo '<td><div class="text-center">' . $work[$cpt]['Workout']['end_date'] . ' </div></td>';
-                    echo '<td><div class="text-center">' . $work[$cpt]['Workout']['location_name'] . ' </div></td>';
-                    echo '<td><div class="text-center">' . $work[$cpt]['Workout']['sport'] . ' </div></td>';
-                    echo '<td><div class="text-center">' . $work[$cpt]['Workout']['description'] . ' </div></td>';
-                    echo '<td><div class="text-center">' . $work[$cpt]['Workout']['contest_id'] . ' </div></td>';
+                    echo '<td><div class="text-center">' . $work[$cpt]['date'] . ' </div></td>';
+                    echo '<td><div class="text-center">' . $work[$cpt]['end_date'] . ' </div></td>';
+                    echo '<td><div class="text-center">' . $work[$cpt]['location_name'] . ' </div></td>';
+                    echo '<td><div class="text-center">' . $work[$cpt]['sport'] . ' </div></td>';
+                    echo '<td><div class="text-center">' . $work[$cpt]['description'] . ' </div></td>';
+                    echo '<td><div class="text-center">' . $work[$cpt]['contest_id'] . ' </div></td>';
                     echo '</tr>';
                 }
                 $cpt++;
@@ -138,14 +138,14 @@
     echo '</tr>';
     
             foreach ($work as $value) {
-                if ($work[$cpt]['Workout']['date'] != $work[$cpt]['Workout']['end_date'] && $work[$cpt]['Workout']['end_date'] < date('Y-m-d H:i:s')) {
+                if ($work[$cpt]['date'] != $work[$cpt]['end_date'] && $work[$cpt]['end_date'] < date('Y-m-d H:i:s')) {
                     echo '<tr>';
-                    echo '<td><div class="text-center">' . $work[$cpt]['Workout']['date'] . ' </div></td>';
-                    echo '<td><div class="text-center">' . $work[$cpt]['Workout']['end_date'] . ' </div></td>';
-                    echo '<td><div class="text-center">' . $work[$cpt]['Workout']['location_name'] . ' </div></td>';
-                    echo '<td><div class="text-center">' . $work[$cpt]['Workout']['sport'] . ' </div></td>';
-                    echo '<td><div class="text-center">' . $work[$cpt]['Workout']['description'] . ' </div></td>';
-                    echo '<td><div class="text-center">' . $work[$cpt]['Workout']['contest_id'] . ' </div></td>';
+                    echo '<td><div class="text-center">' . $work[$cpt]['date'] . ' </div></td>';
+                    echo '<td><div class="text-center">' . $work[$cpt]['end_date'] . ' </div></td>';
+                    echo '<td><div class="text-center">' . $work[$cpt]['location_name'] . ' </div></td>';
+                    echo '<td><div class="text-center">' . $work[$cpt]['sport'] . ' </div></td>';
+                    echo '<td><div class="text-center">' . $work[$cpt]['description'] . ' </div></td>';
+                    echo '<td><div class="text-center">' . $work[$cpt]['contest_id'] . ' </div></td>';
                     echo '</tr>';
                 }
                 $cpt++;
@@ -171,14 +171,14 @@
     echo '</tr>';
     
             foreach ($work as $value) {
-                if ($work[$cpt]['Workout']['date'] < date('Y-m-d H:i:s') && $work[$cpt]['Workout']['end_date'] > date('Y-m-d H:i:s')) {
+                if ($work[$cpt]['date'] < date('Y-m-d H:i:s') && $work[$cpt]['end_date'] > date('Y-m-d H:i:s')) {
                     echo '<tr>';
-                    echo '<td><div class="text-center">' . $work[$cpt]['Workout']['date'] . ' </div></td>';
-                    echo '<td><div class="text-center">' . $work[$cpt]['Workout']['end_date'] . ' </div></td>';
-                    echo '<td><div class="text-center">' . $work[$cpt]['Workout']['location_name'] . ' </div></td>';
-                    echo '<td><div class="text-center">' . $work[$cpt]['Workout']['sport'] . ' </div></td>';
-                    echo '<td><div class="text-center">' . $work[$cpt]['Workout']['description'] . ' </div></td>';
-                    echo '<td><div class="text-center">' . $work[$cpt]['Workout']['contest_id'] . ' </div></td>';
+                    echo '<td><div class="text-center">' . $work[$cpt]['date'] . ' </div></td>';
+                    echo '<td><div class="text-center">' . $work[$cpt]['end_date'] . ' </div></td>';
+                    echo '<td><div class="text-center">' . $work[$cpt]['location_name'] . ' </div></td>';
+                    echo '<td><div class="text-center">' . $work[$cpt]['sport'] . ' </div></td>';
+                    echo '<td><div class="text-center">' . $work[$cpt]['description'] . ' </div></td>';
+                    echo '<td><div class="text-center">' . $work[$cpt]['contest_id'] . ' </div></td>';
                     echo '</tr>';
                 }
                 $cpt++;
@@ -204,14 +204,14 @@
     echo '</tr>';
     
             foreach ($work as $value) {
-                if ($work[$cpt]['Workout']['date'] == $work[$cpt]['Workout']['end_date'] && $work[$cpt]['Workout']['date'] < date('Y-m-d H:i:s') && $work[$cpt]['Workout']['end_date'] < date('Y-m-d H:i:s') ) {
+                if ($work[$cpt]['date'] == $work[$cpt]['end_date'] && $work[$cpt]['date'] < date('Y-m-d H:i:s') && $work[$cpt]['end_date'] < date('Y-m-d H:i:s') ) {
                     echo '<tr>';
-                    echo '<td><div class="text-center">' . $work[$cpt]['Workout']['date'] . ' </div></td>';
-                    echo '<td><div class="text-center">' . $work[$cpt]['Workout']['end_date'] . ' </div></td>';
-                    echo '<td><div class="text-center">' . $work[$cpt]['Workout']['location_name'] . ' </div></td>';
-                    echo '<td><div class="text-center">' . $work[$cpt]['Workout']['sport'] . ' </div></td>';
-                    echo '<td><div class="text-center">' . $work[$cpt]['Workout']['description'] . ' </div></td>';
-                    echo '<td><div class="text-center">' . $work[$cpt]['Workout']['contest_id'] . ' </div></td>';
+                    echo '<td><div class="text-center">' . $work[$cpt]['date'] . ' </div></td>';
+                    echo '<td><div class="text-center">' . $work[$cpt]['end_date'] . ' </div></td>';
+                    echo '<td><div class="text-center">' . $work[$cpt]['location_name'] . ' </div></td>';
+                    echo '<td><div class="text-center">' . $work[$cpt]['sport'] . ' </div></td>';
+                    echo '<td><div class="text-center">' . $work[$cpt]['description'] . ' </div></td>';
+                    echo '<td><div class="text-center">' . $work[$cpt]['contest_id'] . ' </div></td>';
                     echo '</tr>';
                 }
                 $cpt++;

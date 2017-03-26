@@ -221,14 +221,6 @@ class AccountsController extends AppController {
         $this->set('rank', $rank);       
     }
     
-    public function detail($idwo){
-        $this->loadModel('Workout');
-        if($this->request->is('post')){
-            $d = $this->request->data;
-            $this->Workout->editWo($d['id'], $d['date'], $d('end-date'), $d['sport']);
-        }
-        $this->set("current", $this->Workout->set($idwo));
-    }
 
     public function myresults() {
         if(null!==$this->request->session()->read('Members.email')){
