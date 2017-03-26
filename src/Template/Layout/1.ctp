@@ -78,32 +78,37 @@
         </div>
 
         <footer id="footer">
-            <div class="container bg-success">
+            <div class="bg-success">
                 <div class="row">
-                    <div class="col-xs-6 col-sm-6 col-md-3 column">
-                        <h5>Groupe 2 - OCRES</h5>
-                    </div>
-                    <div class="col-xs-6 col-md-3 column">
-                        <h5>Liens utiles</h5>
-                        <ul class="nav">
-                            <li><?php echo $this->Html->link("MPB SAS", array('controller' => 'Accounts', 'action' => 'index')); ?></li>
-                            <li><?php echo $this->Html->link("Mentions légales", array('controller' => 'Accounts', 'action' => 'mentions')); ?></li>
-
+                    <div class=" col-xs-push-1 col-md-2">
+                        <h4>Administrateur</h4>
+						<ul class="nav">
+                            <li><?php echo $this->Html->link("Alexandre Mawas", array('controller' => 'Accounts', 'action' => 'contact')); ?></li>
+                            <li><?php echo $this->Html->link("Jerry Demesure", array('controller' => 'Accounts', 'action' => 'contact')); ?></li>
+                            <li><?php echo $this->Html->link("Charléli Obadia", array('controller' => 'Accounts', 'action' => 'contact')); ?></li>
+                            <li><?php echo $this->Html->link("Aurélien Barthe", array('controller' => 'Accounts', 'action' => 'contact')); ?></li>
                         </ul>
                     </div>
-                    <div class="col-xs-6 col-md-3 column">
-                        <h5>Service Client</h5>
+					<div class="col-xs-push-2 col-md-2 ">
+                        <h4>Commencer</h4>
+                        <ul class="nav">
+                            <li><?php echo $this->Html->link("S'inscrire", array('controller' => 'Accounts', 'action' => 'addmember')); ?></li>
+                            <li><?php echo $this->Html->link('Se connecter', array('controller' => 'Accounts', 'action' => 'connexion')); ?></li>
+                            <li><?php echo $this->Html->link("FAQ", array('controller' => 'Accounts', 'action' => 'faq')); ?></li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-push-3 col-md-2 ">
+                        <h4>Service Client</h4>
                         <ul class="nav">
                             <li><p><span class="glyphicon glyphicon-envelope"></span><a class="footer-contact" href="mailto:ece@ece.fr"> Contact : ece@ece.fr</a></p></li>  
                             <li><p><span class="glyphicon glyphicon-phone"></span><span class="footer-contact"> 06 06 06 06 06</span></p></li>
                         </ul>
                     </div>
-                    <div class="col-xs-6 col-md-3 column">
-                        <h5>Débuter</h5>
+				    <div class="col-xs-push-4 col-md-2 ">
+                        <h4>Liens utiles</h4>
                         <ul class="nav">
-                            <li><?php echo $this->Html->link("S'inscrire", array('controller' => 'Accounts', 'action' => 'addmember')); ?></li>
-                            <li><?php echo $this->Html->link('Se connecter', array('controller' => 'Accounts', 'action' => 'connexion')); ?></li>
-                            <li><?php echo $this->Html->link("FAQ", array('controller' => 'Accounts', 'action' => 'faq')); ?></li>
+                            <li><?php echo $this->Html->link("MPB SAS", array('controller' => 'Accounts', 'action' => 'index')); ?></li>
+                            <li><?php echo $this->Html->link("Mentions légales", array('controller' => 'Accounts', 'action' => 'mentions')); ?></li>
                         </ul>
                     </div>
                     </div>

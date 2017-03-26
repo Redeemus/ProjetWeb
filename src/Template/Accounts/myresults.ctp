@@ -2,17 +2,26 @@
 ?>
 
 <div class="text-center"><h2 class="text-primary"><?php echo "MES RÉSULTATS" ?></h2></div>
-        <div class ="btn">
-            <?php echo $this->Html->link('Ajouter un résultat', array('controller' => 'Accounts', 'action' => 'addresult')); ?></div>
+
+<div class="text-center">
+	<h1>My Perfect Body</h1>
+	<h2>Mes résultats</h2>
+	<h4>Avez-vous progresser ?</h4>
+</div>
+<br></br>
+
+<div class ="btn">
+	<?php echo $this->Html->link('Ajouter un résultat', array('controller' => 'Accounts', 'action' => 'addresult')); ?>
+</div>
 
 
-        <h2>
-            Liste de tous mes résultats : 
-        </h2>
+<h2>
+	Liste de tous mes résultats : 
+</h2>
 
-        <table class="table table-striped">
-            <?php
-            $cpt = 0;
+<table class="table table-striped">
+	<?php
+		$cpt = 0;
             if ($res == 0) {
                 echo '<tr>';
                 echo 'Aucun résultat';
@@ -33,5 +42,5 @@
                     $cpt++;
                 }
             }
-            ?>
-        </table>
+	?>
+</table>

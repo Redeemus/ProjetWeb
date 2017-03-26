@@ -18,8 +18,6 @@
             echo '</tr>';
 
             foreach ($rank as $value2) {
-                // pr($value2['Log']['log_type']);
-
                 if ($value2['log_type'] == $value['log_type']) {
 
                     $cpt++;
@@ -30,7 +28,6 @@
                     echo '<td><div class="text-center">' . $value2['log_value'] . '</div></td>';
                     echo '</tr>';
                 }
-                //echo '<td>' . $rank[$value][$cpt - 1]['Log']['log_value'] . '</td>';
             }
             $cpt = 0;
         }
