@@ -4,7 +4,7 @@ namespace App\Model\Table;
 
 use Cake\ORM\Table;
 use Cake\Validation\Validator;
-use Cake\ORM\TableRegistry;;
+use Cake\ORM\TableRegistry;
 
 class LogTable extends Table {
 
@@ -20,6 +20,15 @@ class LogTable extends Table {
         $n -> log_value = $log_value;
         $this->save($n);
     }
+    
+    public function getRanks (){
+        $logsTable = TableRegistry::get('Logs');
+        $log = $logsTable->find('all')
+            ->order(["log_value" => "DESC"])
+            ->toArray();
+        return $log;
+    }
+    
     
     
 }

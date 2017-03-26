@@ -14,7 +14,7 @@ use Cake\Event\Event;
 class AccountsController extends AppController {
     
     public function beforeFilter(Event $event) {
-        $this->set('actual_id',$this->request->session()->read('Members.email'));
+        $actual_id = $this->request->session()->read('Members.email');
     }
 
     public function index() {
@@ -107,8 +107,12 @@ class AccountsController extends AppController {
     public function halloffame() {
         $this->loadModel('Logs');
         $sport_tab = $this->Logs->find('all')->where(['Logs.log_type']);
-        $ntab = $this->set('sport', $sport_tab);
-        $this->set('rank', $this->Member->findforHall($this->Log->classement($ntab)));       
+        $this->loadModel('Logs');
+        $rank = $this->Logs->find('all')
+            ->order(["log_value" => "DESC"])
+            ->toArray();
+        $this->set('sport', $sport_tab);
+        $this->set('rank', $rank);       
     }
     
     public function detail($idwo){
@@ -121,41 +125,124 @@ class AccountsController extends AppController {
     }
 
     public function myresults() {
-        
+        $session = $this->request->session();
+        $member_id = $session->read('Members.id');
+        $this->loadModel('Logs');
+        $results = $this->Logs->find('all')->where(['Logs.member_id' => $member_id]);
+        foreach ($results as $key => $value) {
+                    $res[] = $value; 
+        }
+        pr($res);
+        $this->set('res', $res);
     }
 
     public function mydevices() {
-        
+        $session = $this->request->session();
+        $member_id = $session->read('Members.id');
+        $this->loadModel('Devices');
+        $devices = $this->Devices->find('all')->where(['Devices.member_id' => $member_id]);
+        foreach ($devices as $key => $value) {
+                    $deviceDisplay[] = $value; 
+        }
+        pr($deviceDisplay);
+        $this->set('work', $deviceDisplay);
     }
     
     public function myworkouts() {
-     
+        $session = $this->request->session();
+        $member_id = $session->read('Members.id');
+        $this->loadModel('Workouts');
+        $workouts = $this->Workouts->find('all')->where(['Workouts.member_id' => $member_id]);
+        foreach ($workouts as $key => $value) {
+                    $workoutDisplay[] = $value; 
+        }
+        pr($workoutDisplay);
+        $this->set('work', $workoutDisplay);
     }
     
     public function addworkout() {
         $session = $this->request->session();
         $member_id = $session->read('Members.id');
-        $this-> loadModel("Workout");
+        $this-> loadModel("Workouts");
         if($this->request->is('post')){
             $d = $this->request->data;
-            pr($d);
-            $this->workouts->addworkout($member_id, $d['date'], $d['end_date'],$d['location_name'],$d['description'], $d['sport']);
+            $workouts = $this->Workouts->newEntity();
+            $d = array(
+                    'member_id' => $member_id,
+                    'date' => $d['date'],
+                    'end_date' => $d['end_date'],
+                    'location_name' => $d['location_name'],
+                    'description' => $d['description'],
+                    'sport' => $d['sport']
+            );
+            $workouts = $this->Workouts->patchEntity($workouts, $d);
+            if ($this->Workouts->save($workouts)) {
+                    return $this->redirect([
+                    'controller' => 'accounts',
+                    'action' => 'myworkouts']);
+                }else{
+                    $messageUser = 'Echec.';
+                }
         }
     }
 
     public function adddevices() {
-        $this-> loadModel("Device");
+        $this-> loadModel("Devices");
+        $session = $this->request->session();
+        $member_id = $session->read('Members.id');
         if($this->request->is('post')){
             $d = $this->request->data;
-            $this->Device->addDevice($d['serial'], $d['description']);
+            $devices = $this->Devices->newEntity();
+            $d = array(
+                    'member_id' => $member_id,
+                    'serial' => $d['serial'],
+                    'description' => $d['description'],
+                    'trusted' => 0
+            );
+            $devices = $this->Devices->patchEntity($devices, $d);
+            if ($this->Devices->save($devices)) {
+                    return $this->redirect([
+                    'controller' => 'accounts',
+                    'action' => 'mydevices']);
+                }else{
+                    $messageUser = 'Echec.';
+                }
         }
     }
 
     public function addresult() {
-        $this-> loadModel("Log");
+        $session = $this->request->session();
+        $member_id = $session->read('members.id');
+        $this->loadModel("Logs");
+        $this->loadModel("Devices");
+        $this->loadModel("Workouts");
+        $wid=$workout_id;
+        $this->set('work_id', $wid);
+        $tra=$this->Devices->find()->where(['member_id' => $member_id, 'trusted' =>'0'])->toArray();
+        $did=$tra[0]['id'];
+        $this->set('device_id', $did);
+        $this-> loadModel("Logs");
         if($this->request->is('post')){
             $d = $this->request->data;
-            $this->Device->addResult($d['member_id'], $d['workout_id'], $d['device_id'], $d['date'], $d['location_latitude'], $d['location_logitude'], $d['log_type'], $d['log_value'] );
+            $results = $this->Logs->newEntity();
+            $d = array(
+                    'member_id' => $member_id,
+                    'workout_id' => $d['workout_id'],
+                    'device_id' => $d['device_id'],
+                    'date' => $d['date'],
+                    'location_latitude' => $d['location_latitude'],
+                    'location_longitude' => $d['location_longitude'],
+                    'log_type' => $d['log_type'],
+                    'log_value' => $d['log_value']
+            );
+            $results = $this->Logs->patchEntity($results, $d);
+            if ($this->Logs->save($results)) {
+                    return $this->redirect([
+                    'controller' => 'accounts',
+                    'action' => 'myresults']);
+                }else{
+                    $messageUser = 'Echec.';
+                }
         }
     }
 
