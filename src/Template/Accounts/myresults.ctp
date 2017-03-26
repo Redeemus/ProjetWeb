@@ -26,9 +26,9 @@
             if ($res != 0) {
                 foreach ($res as $value) {
                     echo '<tr>';
-                    echo '<td><div class="text-center">' . $res[$cpt]['Log']['date'] . '</div></td>';
-                    echo '<td><div class="text-center">' . $res[$cpt]['Log']['log_type'] . '</div></td>';
-                    echo '<td><div class="text-center">' . $res[$cpt]['Log']['log_value'] . '</div></td>';
+                    echo '<td><div class="text-center">' . $res[$cpt]['date'] . '</div></td>';
+                    echo '<td><div class="text-center">' . $res[$cpt]['log_type'] . '</div></td>';
+                    echo '<td><div class="text-center">' . $res[$cpt]['log_value'] . '</div></td>';
                     echo '</tr>';
                     $cpt++;
                 }

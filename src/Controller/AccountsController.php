@@ -106,7 +106,8 @@ class AccountsController extends AppController {
 
     public function halloffame() {
         $this->loadModel('Logs');
-        $sport_tab = $this->Logs->find('all')->where(['Logs.log_type']);
+        $sport_tab = $this->Logs->find('all', ['fields' => 'Logs.log_type'])
+            ->toArray();
         $this->loadModel('Logs');
         $rank = $this->Logs->find('all')
             ->order(["log_value" => "DESC"])
@@ -156,7 +157,6 @@ class AccountsController extends AppController {
         foreach ($workouts as $key => $value) {
                     $workoutDisplay[] = $value; 
         }
-        pr($workoutDisplay);
         $this->set('work', $workoutDisplay);
     }
     
@@ -212,14 +212,14 @@ class AccountsController extends AppController {
 
     public function addresult() {
         $session = $this->request->session();
-        $member_id = $session->read('members.id');
-        $this->loadModel("Logs");
-        $this->loadModel("Devices");
+        $member_id = $session->read('Members.id');
         $this->loadModel("Workouts");
-        $wid=$workout_id;
+        $wid = $this->Workouts->find('all', ['fields' => 'Workouts.id'])
+                ->toArray();
         $this->set('work_id', $wid);
-        $tra=$this->Devices->find()->where(['member_id' => $member_id, 'trusted' =>'0'])->toArray();
-        $did=$tra[0]['id'];
+        $this->loadModel("Devices");
+        $did=$this->Devices->find('all', ['fields' => 'Devices.id'])
+                ->toArray();
         $this->set('device_id', $did);
         $this-> loadModel("Logs");
         if($this->request->is('post')){
@@ -231,7 +231,7 @@ class AccountsController extends AppController {
                     'device_id' => $d['device_id'],
                     'date' => $d['date'],
                     'location_latitude' => $d['location_latitude'],
-                    'location_longitude' => $d['location_longitude'],
+                    'location_logitude' => $d['location_logitude'],
                     'log_type' => $d['log_type'],
                     'log_value' => $d['log_value']
             );
