@@ -10,8 +10,7 @@
         <?php
         $cpt = 0;
         foreach ($sport as $value) {
-            //pr($value['Log']['log_type']);
-            echo '<tr> <th colspan = "3" > <h4 class="badgetitre">' . ($value['Log']['log_type']) . '</h4> </th> </tr>';
+            echo '<tr> <th colspan = "3" > <h4 class="badgetitre">' . ($value['log_type']) . '</h4> </th> </tr>';
             echo '<tr class="success">';
             echo '<th class="col-md-3"><div class="text-center">  Place </div></th>';
             echo '<th class="col-md-3"><div class="text-center">  Membre </div></th>';
@@ -19,19 +18,16 @@
             echo '</tr>';
 
             foreach ($rank as $value2) {
-                // pr($value2['Log']['log_type']);
-
-                if ($value2['Log']['log_type'] == $value['Log']['log_type']) {
+                if ($value2['log_type'] == $value['log_type']) {
 
                     $cpt++;
 
                     echo '<tr>';
                     echo '<td><div class="text-center">' . $cpt . '</div></th>';
-                    echo '<td><div class="text-center">' . $value2['Log']['member_id'] . '</div></td>';
-                    echo '<td><div class="text-center">' . $value2['Log']['log_value'] . '</div></td>';
+                    echo '<td><div class="text-center">' . $value2['member_id'] . '</div></td>';
+                    echo '<td><div class="text-center">' . $value2['log_value'] . '</div></td>';
                     echo '</tr>';
                 }
-                //echo '<td>' . $rank[$value][$cpt - 1]['Log']['log_value'] . '</td>';
             }
             $cpt = 0;
         }
