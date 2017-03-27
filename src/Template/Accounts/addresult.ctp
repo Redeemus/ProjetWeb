@@ -35,7 +35,7 @@ echo $this->Form->create('resultadd');
 			<label class="col-md-12"> <?php echo $this->Form->input('log_value' , array('label' => '', 'placeholder' =>'Log Value')); ?></label>
 		</div>
 		<div class="form-group">
-			<label class="col-md-12"><?php echo $this->Form->submit('Ajouter'); ?></label>
+			<label class="col-md-12"><?php echo $this->Form->submit('Ajouter', array('name' => 'resultadd')); ?></label>
 			<label class="col-md-12"><?php echo $this->Form->end(); ?></label>
 		</div>
 	</div>

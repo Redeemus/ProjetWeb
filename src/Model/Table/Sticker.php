@@ -8,5 +8,9 @@ use Cake\ORM\TableRegistry;
 
 class Sticker extends Table {
 
-    
+    function ifempty($tab){
+        if (empty($tab)){
+            $tab[] = 0;
+        }
+    }
 }
