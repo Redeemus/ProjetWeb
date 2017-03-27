@@ -43,7 +43,7 @@
         <textarea class="form-control" id="comments" name="commentaire" placeholder="Commentaire" rows="5"></textarea>
             <br>
             <div class="row-fluid">
-                        <button><a class="btn" href="adddevices">Envoyer</a></button>
+                <button><a class="btn" href="contact.ctp">Envoyer</a></button>
             </div>
 			<br></br>
         </div>

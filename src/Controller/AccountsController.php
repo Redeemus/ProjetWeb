@@ -10,6 +10,7 @@ namespace App\Controller;
 
 use App\Controller\AppController;
 use Cake\Event\Event;
+use Cake\I18n\Time;
 
 class AccountsController extends AppController {
     
@@ -178,7 +179,7 @@ class AccountsController extends AppController {
         
             
 
-            if (file_exists('WWW_ROOT' . 'img' . DS . $this->request->session()->read('Members.id') . '.jpg')) {;
+            if (file_exists('WWW_ROOT' . 'img' . DS . $this->request->session()->read('Members.id') . '.png')) {;
                 $this->set('img_name', $this->request->session()->read('Members.id') . ".png");
             } else {
                 $this->set('img_name', "default.png");
@@ -253,7 +254,6 @@ class AccountsController extends AppController {
             }
             $del = $this->Devices->find('all', ['fields' => 'Devices.id'])
                 ->where(['Devices.member_id' => $member_id])
-                ->where(['Devices.trusted' => 1])
                 ->toArray();
             for($i = 0; $i<count($del); $i++){
                 $listdel[]=$del[$i]['id'];
@@ -267,20 +267,28 @@ class AccountsController extends AppController {
                         $denvalDisplay[] = $value; 
             }
             if ($this->request->is('post')) {
+                
                 if (isset($this->request->data['devicedel'])) {
-                    $d= $this->request->data['devicedel'];
-                    $idevice = $this->Devices->find()->where(['Devices.id' => $d['id']]);
-                    $this->Devices->delete($idevice);
+                    $this->loadModel('Devices');
+                    $d= $this->request->data;
+                    $i = $d['id'];
+                    $id = $listdel[$i];
+                    $this->loadModel('Devices');
+                    $idevice = $this->Devices->find()->where(['Devices.id' => $id]);
+                    $delete = $this->Devices->delete($idevice);
+                    $this->Devices->save($delete);
                     $this->redirect(array('controller' => 'accounts', 'action' => 'mydevices'));
                 }
                 if (isset($this->request->data['deviceval'])) {
-                    $DeviceTable = TableRegistry::get('Devices');
-                    $idDevice = $DeviceTable->get($this->request->data['id']);
+                    $d= $this->request->data;
+                    $i = $d['id'];
+                    $id = $listval[$i];
+                    $this->loadModel('Devices');
+                    $idDevice = $this->Devices->find('all')->where(['id' => $id])->first();
                     $idDevice-> trusted = 1;
-                    pr($idDevice);
-                    if ($DeviceTable->save($idDevice)){
-                       $this->redirect(array('controller' => 'accounts', 'action' => 'mydevices')); 
-                    }
+                    $this->Devices->save($idDevice);
+                    $this->redirect(array('controller' => 'accounts', 'action' => 'mydevices'));
+                    
                     
                 }
             }
@@ -340,6 +348,51 @@ class AccountsController extends AppController {
                     $messageUser = 'Echec.';
                 }
         }
+        $this->loadModel('Workouts');
+        $val = $this->Workouts->find('all')
+            ->where(['Workouts.member_id' => $member_id])
+            ->toArray();
+        switch(count($val)) {
+                
+                case 1:
+                    $this->loadModel('Earnings');
+                    $results = $this->Earnings->newEntity();
+                    $date= Time::now();
+                    $d = array(
+                    'member_id' => $member_id,
+                    'sticker_id' => 1,
+                    'date' => $date,
+                    );
+                    $results = $this->Earnings->patchEntity($results, $d);  
+                    $this->Earnings->save($results);
+                    break;
+                
+                case 3:
+                     $this->loadModel('Earnings');
+                    $results = $this->Earnings->newEntity();
+                    $date= Time::now();
+                    $d = array(
+                    'member_id' => $member_id,
+                    'sticker_id' => 5,
+                    'date' => $date,
+                    );
+                    $results = $this->Earnings->patchEntity($results, $d); 
+                    $this->Earnings->save($results);
+                    break;
+                
+                case 5:
+                     $this->loadModel('Earnings');
+                    $results = $this->Earnings->newEntity();
+                    $date= Time::now();
+                    $d = array(
+                    'member_id' => $member_id,
+                    'sticker_id' => 6,
+                    'date' => $date,
+                    );
+                    $results = $this->Earnings->patchEntity($results, $d);  
+                    $this->Earnings->save($results);
+                    break;
+            }
     }
 
     public function adddevices() {
@@ -382,6 +435,7 @@ class AccountsController extends AppController {
         $this->loadModel("Devices");
         $did=$this->Devices->find('all', ['fields' => 'Devices.id'])
                 ->where(['Devices.member_id' => $member_id])
+                ->where(['Devices.trusted' => 1])
                 ->toArray();
         for($i = 0; $i<count($did); $i++){
             $device_id[]=$did[$i]['id'];
@@ -389,51 +443,122 @@ class AccountsController extends AppController {
         $this->set('device_id', $device_id);
         $this-> loadModel("Logs");
         if($this->request->is('post')){
-            $d = $this->request->data;
-            $results = $this->Logs->newEntity();
+            $d= $this->request->data;
+            $result = $this->Logs->newEntity();
+            $i1 = $d['workout_id'];
+            $workout_id = $work_id[$i1];
+            pr($work_id);
+            pr($workout_id);
+            $i2 = $d['device_id'];
+            $deviceid = $device_id[$i2];
+            pr($device_id);
+            pr($deviceid);
             $d = array(
                     'member_id' => $member_id,
-                    'workout_id' => $d['workout_id'],
-                    'device_id' => $d['device_id'],
+                    'workout_id' => $workout_id,
+                    'device_id' => $deviceid,
                     'date' => $d['date'],
                     'location_latitude' => $d['location_latitude'],
                     'location_logitude' => $d['location_logitude'],
                     'log_type' => $d['log_type'],
                     'log_value' => $d['log_value']
             );
-            $results = $this->Logs->patchEntity($results, $d);
-            if ($this->Logs->save($results)) {
-                    return $this->redirect([
+            $result = $this->Logs->patchEntity($result, $d);
+            if($this->Logs->save($result)){ 
+            $this->redirect([
                     'controller' => 'accounts',
-                    'action' => 'myresults']);
-                }else{
-                    $messageUser = 'Echec.';
-                }
+                    'action' => 'myresults']); 
+            }
+           
         }
+        
+       
+        $this->loadModel('Logs');
+        $val = $this->Logs->find('all')
+            ->where(['Logs.member_id' => $member_id])
+            ->toArray();
+        switch(count($val)) { 
+                case 1:
+                    $this->loadModel('Earnings');
+                    $results = $this->Earnings->newEntity();
+                    $date= Time::now();
+                    $d = array(
+                    'member_id' => $member_id,
+                    'sticker_id' => 4,
+                    'date' => $date,
+                    );
+                    $results = $this->Earnings->patchEntity($results, $d);  
+                    $this->Earnings->save($results);
+                    break;
+                
+                case 3:
+                     $this->loadModel('Earnings');
+                    $results = $this->Earnings->newEntity();
+                    $date= Time::now();
+                    $d = array(
+                    'member_id' => $member_id,
+                    'sticker_id' => 5,
+                    'date' => $date,
+                    );
+                    $results = $this->Earnings->patchEntity($results, $d);   
+                    $this->Earnings->save($results);
+                    break;
+                
+                case 5:
+                     $this->loadModel('Earnings');
+                    $results = $this->Earnings->newEntity();
+                    $date= Time::now();
+                    $d = array(
+                    'member_id' => $member_id,
+                    'sticker_id' => 6,
+                    'date' => $date,
+                    );
+                    $results = $this->Earnings->patchEntity($results, $d); 
+                    $this->Earnings->save($results);
+                    break;
+            }
     }
     
+    
     public function mdpforget() {
-        if ($this->request->is('post')) {
-            if (isset($this->request->data['mdp'])) {
-                $mdp_actual = $this->Member->find()->first(array('fields' => array('password'), 'conditions' => array('email' => $this->request->data['mdp.email'])));
-                if ($mdp_actual) {
-                    $mdp_actual['Member']['password'] = $this->generer_mot_de_passe();
-                    $id_actual = $this->Member->find("first", array('fields' => array('id'), 'conditions' => array('email' => $this->request->data['mdp']['email'])));
-
-                    $this->Member->updateUser($id_actual['Member']['id'], $this->request->data['mdp']['email'], $mdp_actual['Member']['password']);
-
-                    $this->send_email_mdp(($this->request->data['mdp']['email']), $mdp_actual['Member']['password']);
-                    $this->Flash->success("Un email de confirmation a été envoyé !");
-                    $this->redirect(array('controller' => 'accounts', 'action' => 'connexion'));
-                } else {
-                    $this->send_email_mdp(($this->request->data['mdp']['email']), "Vous n'êtes pas inscrit au site avec cet email");
-                    $this->Flash->Error("Email invalide !");
-                }
-            }
-        }
+        
     }
 
-    public function mybadges() {   
+    public function mybadges() { 
+        $this->loadModel('Earnings');
+        $sticker = $this->Earnings->find('all')
+            ->order(["sticker_id" => "DESC"])
+            ->toArray();
+        for($i = 0; $i<count($sticker)+1; $i++){
+            switch($sticker[$i]['sticker_id']) {
+                case 1:
+                    $liststicker1[]=$sticker[$i]['member_id'];
+                    break;
+                case 2:
+                    $liststicker2[]=$sticker[$i]['member_id'];
+                    break;
+                case 3:
+                    $liststicker3[]=$sticker[$i]['member_id'];
+                    break;
+                case 4:
+                    $liststicker4[]=$sticker[$i]['member_id'];
+                    break;
+                case 5:
+                    $liststicker5[]=$sticker[$i]['member_id'];
+                    break;
+                case 6:
+                    $liststicker6[]=$sticker[$i]['member_id'];
+                    break;
+                
+            }
+        }
+        
+        $this->set('stickers1', $liststicker1);
+        $this->set('stickers2', $liststicker2);
+        $this->set('stickers3', $liststicker3);
+        $this->set('stickers4', $liststicker4);
+        $this->set('stickers5', $liststicker5);
+        $this->set('stickers6', $liststicker6);
     }
     
     public function contact() {
@@ -445,5 +570,34 @@ class AccountsController extends AppController {
         
     public function mentions(){
             
+    }
+    
+    public function display(...$path)
+    {
+        $count = count($path);
+        if (!$count) {
+            return $this->redirect('/accounts');
+        }
+        if (in_array('..', $path, true) || in_array('.', $path, true)) {
+            throw new ForbiddenException();
+        }
+        $page = $subpage = null;
+
+        if (!empty($path[0])) {
+            $page = $path[0];
+        }
+        if (!empty($path[1])) {
+            $subpage = $path[1];
+        }
+        $this->set(compact('page', 'subpage'));
+
+        try {
+            $this->render(implode('/', $path));
+        } catch (MissingTemplateException $e) {
+            if (Configure::read('debug')) {
+                throw $e;
+            }
+            throw new NotFoundException();
+        }
     }
 }

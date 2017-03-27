@@ -14,12 +14,8 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 
         <?php
-        echo $this->Html->meta('icon');
         echo $this->Html->css('bootstrap');
         echo $this->Html->script('bootstrap');
-        /**echo $this->fetch('meta');
-        echo $this->fetch('css');
-        echo $this->fetch('script');**/
         ?>
 
     </head>

@@ -101,7 +101,7 @@
                     <h2 id="supprimer">Supprimer un appareil</h2>
                     <form>
                         <?php echo $this->Form->input('id', array('options' => $listeiddel)); ?>
-                        <?php echo $this->Form->submit('Supprimer'); ?>
+                        <?php echo $this->Form->submit('Supprimer', array('name' => 'devicedel')); ?>
                         <?php echo $this->Form->end(); ?>
                     </form>
                 </div>
@@ -118,11 +118,11 @@
                     <h2 id="valider">Valider un appareil</h2>
                     <form>
                         <?php echo $this->Form->input('id', array('options' => $listeidval)); ?>
-                        <?php echo $this->Form->submit('Valider'); ?>
+                        <?php echo $this->Form->submit('Valider', array('name' => 'deviceval')); ?>
                         <?php echo $this->Form->end(); ?>
                     </form>
                 </div>
              <?php } ?>   
             </div>
         </div>
- }
+ 
