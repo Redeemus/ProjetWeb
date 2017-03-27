@@ -178,7 +178,7 @@ class AccountsController extends AppController {
         
             
 
-            if (file_exists('WWW_ROOT' . 'img' . DS . $this->request->session()->read('Members.id') . '.jpg')) {;
+            if (file_exists('WWW_ROOT' . 'img' . DS . $this->request->session()->read('Members.id') . '.png')) {;
                 $this->set('img_name', $this->request->session()->read('Members.id') . ".png");
             } else {
                 $this->set('img_name', "default.png");
@@ -253,7 +253,6 @@ class AccountsController extends AppController {
             }
             $del = $this->Devices->find('all', ['fields' => 'Devices.id'])
                 ->where(['Devices.member_id' => $member_id])
-                ->where(['Devices.trusted' => 1])
                 ->toArray();
             for($i = 0; $i<count($del); $i++){
                 $listdel[]=$del[$i]['id'];
@@ -412,6 +411,27 @@ class AccountsController extends AppController {
         }
     }
     
+    public function send_email_mdp($dest, $message) {
+        $Email = new CakeEmail('gmail');
+        $Email->to($dest);
+        $Email->subject('Sportmanager : Email de confirmation pour mot de passe');
+        $Email->from('noreply.sportmanager@gmail.com');
+        $Email->send("Votre mot de passe est : " . $message);
+    }
+    
+    public function generer_mot_de_passe() {
+        $nb_caractere = 12;
+        $mdp = "";
+
+        $chaine = "abcdefghjkmnopqrstuvwxyzABCDEFGHJKLMNOPQRSTUVWXYZ023456789+@!$%?&";
+        $longeur_chaine = strlen($chaine);
+        for ($i = 1; $i <= $nb_caractere; $i++) {
+            $place_aleatoire = mt_rand(0, ($longeur_chaine - 1));
+            $mdp .= $chaine[$place_aleatoire];
+        }
+        return $mdp;
+    }
+    
     public function mdpforget() {
         if ($this->request->is('post')) {
             if (isset($this->request->data['mdp'])) {
@@ -433,7 +453,17 @@ class AccountsController extends AppController {
         }
     }
 
-    public function mybadges() {   
+    public function mybadges() {  
+        $session = $this->request->session();
+        $member_id = $session->read('Members.id');
+        $this->loadModel('Earnings');
+        $val = $this->Earnings->find('all', ['fields' => 'Earnings.sticker_id'])
+            ->where(['Earnings.member_id' => $member_id])
+            ->toArray();
+        for($i = 0; $i<count($val); $i++){
+            $listval[]=$val[$i]['sticker_id'];
+        }
+        pr($listval);
     }
     
     public function contact() {
